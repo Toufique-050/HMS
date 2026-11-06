@@ -1,0 +1,1511 @@
+/* =====================================================
+   LUXURYSTAY — HOUSEKEEPING DASHBOARD
+   Charcoal, ivory and soft gold theme
+   ===================================================== */
+
+.rx-shell.hk-shell {
+    --rx-green: #34483b;
+    --rx-dark: #26382e;
+    --rx-line: #e7e3d9;
+    --rx-muted: #65756b;
+    --rx-surface: #f7f6f1;
+    --rx-gold: #c5a574;
+
+    display: grid;
+    grid-template-columns: 248px minmax(0, 1fr);
+
+    min-height: 100vh;
+
+    background: var(--rx-surface);
+    color: #2d3c32;
+
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+
+    isolation: isolate;
+}
+
+.rx-shell.hk-shell *,
+.rx-shell.hk-shell *::before,
+.rx-shell.hk-shell *::after {
+    box-sizing: border-box;
+}
+
+/* =====================================================
+   GENERAL ELEMENTS
+   ===================================================== */
+
+.rx-shell.hk-shell h1,
+.rx-shell.hk-shell h2,
+.rx-shell.hk-shell h3 {
+    color: var(--rx-dark);
+    line-height: 1.2;
+}
+
+.rx-shell.hk-shell h1 {
+    margin: 12px 0;
+    font: clamp(29px, 3.2vw, 43px)/1.18 Georgia, serif;
+}
+
+.rx-shell.hk-shell h2 {
+    margin: 0 0 16px;
+    font: 25px/1.25 Georgia, serif;
+}
+
+.rx-shell.hk-shell h3 {
+    margin: 0 0 10px;
+    font-size: 15px;
+}
+
+.rx-shell.hk-shell p {
+    margin: 8px 0 16px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.rx-shell.hk-shell a {
+    color: var(--rx-dark);
+}
+
+.rx-shell.hk-shell button,
+.rx-shell.hk-shell input,
+.rx-shell.hk-shell select,
+.rx-shell.hk-shell textarea {
+    font: inherit;
+}
+
+.rx-shell.hk-shell :is(
+    button,
+    a,
+    input,
+    select,
+    textarea,
+    [tabindex]
+):focus-visible {
+    outline: 3px solid #b28b54;
+    outline-offset: 3px;
+}
+
+.rx-shell.hk-shell button {
+    cursor: pointer;
+}
+
+.rx-shell.hk-shell button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+/* =====================================================
+   SIDEBAR
+   ===================================================== */
+
+.rx-shell.hk-shell .rx-sidebar {
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+
+    height: 100vh;
+    padding: 30px 20px;
+    overflow-y: auto;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(197, 165, 116, 0.1),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #17231e,
+            #24372b
+        );
+
+    border-right: 1px solid #35473b;
+    color: #edf2eb;
+}
+
+.rx-shell.hk-shell .rx-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.rx-shell.hk-shell .rx-brand strong {
+    display: block;
+    color: #ffffff;
+    font: 27px Georgia, serif;
+    letter-spacing: -0.03em;
+}
+
+.rx-shell.hk-shell .rx-brand small {
+    display: block;
+    margin-top: 5px;
+
+    color: #d9c19b;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.rx-shell.hk-shell .rx-monogram {
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 42px;
+    width: 42px;
+    height: 46px;
+
+    background: #c5a574;
+    color: #17231e;
+    border-radius: 11px;
+
+    font: 30px Georgia, serif;
+}
+
+.rx-shell.hk-shell .rx-nav {
+    display: grid;
+    gap: 8px;
+}
+
+.rx-shell.hk-shell .rx-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-width: 0;
+    padding: 12px 10px;
+
+    border: 1px solid transparent;
+    border-radius: 9px;
+
+    color: #d8e2d9;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.rx-shell.hk-shell .rx-nav a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+.rx-shell.hk-shell .rx-nav a.active,
+.rx-shell.hk-shell .rx-nav a.active:hover {
+    background: #c5a574;
+    border-color: #c5a574;
+    box-shadow: none;
+    color: #19251e;
+    font-weight: 700;
+}
+
+/* SVG icons from the updated HousekeepingLayout.jsx */
+
+.rx-shell.hk-shell .hk-nav-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+
+    color: inherit;
+    opacity: 1;
+}
+
+.rx-shell.hk-shell .hk-nav-icon svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Fallback styling if old numbered menu is still used */
+
+.rx-shell.hk-shell .rx-nav a > span:not(.hk-nav-icon) {
+    min-width: 0;
+}
+
+/* User information */
+
+.rx-shell.hk-shell .rx-user {
+    display: grid;
+    gap: 9px;
+
+    margin-top: auto;
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(221, 207, 183, 0.2);
+    color: #ffffff;
+
+    overflow-wrap: anywhere;
+}
+
+.rx-shell.hk-shell .rx-user strong {
+    color: #ffffff;
+}
+
+.rx-shell.hk-shell .rx-user small {
+    color: #c5d1c6;
+    font-size: 11px;
+}
+
+/* Mobile navigation toggle */
+
+.rx-shell.hk-shell .rx-mobile-toggle {
+    display: none;
+}
+
+/* =====================================================
+   MAIN AREA
+   ===================================================== */
+
+.rx-shell.hk-shell .rx-main {
+    width: 100%;
+    max-width: 1600px;
+    min-width: 0;
+
+    margin: 0 auto;
+    padding: 36px;
+
+    background: #f7f6f1;
+}
+
+.rx-shell.hk-shell .rx-page {
+    min-width: 0;
+}
+
+/* =====================================================
+   HERO / PAGE HEADER
+   ===================================================== */
+
+.rx-shell.hk-shell .rx-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    margin-bottom: 24px;
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(197, 165, 116, 0.16),
+            transparent 35%
+        ),
+        linear-gradient(
+            125deg,
+            #1c2a22,
+            #35493a
+        );
+
+    border: 1px solid #35493a;
+    border-radius: 18px;
+}
+
+.rx-shell.hk-shell .rx-hero h1,
+.rx-shell.hk-shell .rx-hero h2,
+.rx-shell.hk-shell .rx-hero h3 {
+    color: #ffffff;
+}
+
+.rx-shell.hk-shell .rx-hero p {
+    margin: 0;
+    color: #d7e2d7;
+}
+
+.rx-shell.hk-shell .rx-eyebrow {
+    color: #896b42;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.rx-shell.hk-shell .rx-hero .rx-eyebrow {
+    color: #e2c79d;
+}
+
+.rx-shell.hk-shell .rx-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.rx-shell.hk-shell .rx-button,
+.rx-shell.hk-shell .rx-main .card button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 44px;
+    padding: 10px 16px;
+
+    background: #304638;
+    border: 1px solid #304638;
+    border-radius: 8px;
+    color: #ffffff;
+
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.rx-shell.hk-shell a.rx-button {
+    color: #ffffff;
+}
+
+.rx-shell.hk-shell .rx-button:hover:not(:disabled),
+.rx-shell.hk-shell .rx-main .card button:hover:not(:disabled) {
+    background: #1c2c22;
+    border-color: #1c2c22;
+    color: #ffffff;
+}
+
+.rx-shell.hk-shell .rx-button.rx-secondary,
+.rx-shell.hk-shell a.rx-button.rx-secondary {
+    background: #ffffff;
+    border-color: #ded9cd;
+    color: #304638;
+}
+
+.rx-shell.hk-shell .rx-button.rx-secondary:hover:not(:disabled) {
+    background: #f8f4ed;
+    border-color: #c4ab86;
+    color: #25382d;
+}
+
+.rx-shell.hk-shell .rx-hero .rx-button:not(.rx-secondary) {
+    background: #d2b58a;
+    border-color: #d2b58a;
+    color: #1a2a20;
+}
+
+.rx-shell.hk-shell .rx-hero .rx-button:not(.rx-secondary):hover {
+    background: #e2cda9;
+    border-color: #e2cda9;
+    color: #1a2a20;
+}
+
+/* =====================================================
+   DASHBOARD STATS
+   ===================================================== */
+
+.rx-shell.hk-shell .rx-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.rx-shell.hk-shell .rx-stat,
+.rx-shell.hk-shell .rx-stats article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    min-width: 0;
+    padding: 22px;
+    overflow: hidden;
+
+    background: #ffffff;
+    border: 1px solid #e9e5dc;
+    border-radius: 15px;
+
+    box-shadow: 0 8px 24px rgba(40, 55, 44, 0.035);
+}
+
+.rx-shell.hk-shell .rx-stat::before,
+.rx-shell.hk-shell .rx-stats article::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 42px;
+    height: 3px;
+
+    background: #c5a574;
+}
+
+.rx-shell.hk-shell .rx-stat span,
+.rx-shell.hk-shell .rx-stats article span {
+    color: #65756b;
+    font-size: 13px;
+}
+
+.rx-shell.hk-shell .rx-stat strong,
+.rx-shell.hk-shell .rx-stats article strong {
+    color: #263a2e;
+    font: 32px Georgia, serif;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
+
+.rx-shell.hk-shell .rx-muted {
+    color: var(--rx-muted);
+    font-size: 12px;
+}
+
+.rx-shell.hk-shell .rx-shortcuts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 22px 0;
+}
+
+.rx-shell.hk-shell .rx-shortcuts a {
+    padding: 12px 16px;
+    background: #f2eee5;
+    border-radius: 9px;
+    color: #5d4b31;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.rx-shell.hk-shell .rx-shortcuts a:hover {
+    background: #e9dfd0;
+}
+
+/* =====================================================
+   PANELS AND TASK CARDS
+   ===================================================== */
+
+.rx-shell.hk-shell .rx-panel,
+.rx-shell.hk-shell .hk-card,
+.rx-shell.hk-shell .card {
+    min-width: 0;
+    background: #ffffff;
+    border: 1px solid #e9e5dc;
+    border-radius: 15px;
+
+    box-shadow: 0 8px 24px rgba(40, 55, 44, 0.035);
+}
+
+.rx-shell.hk-shell .rx-panel {
+    margin: 20px 0;
+    padding: 24px;
+}
+
+.rx-shell.hk-shell .hk-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.rx-shell.hk-shell .hk-card {
+    padding: 24px;
+}
+
+.rx-shell.hk-shell .hk-card h2 {
+    margin: 10px 0;
+    font-size: 22px;
+}
+
+.rx-shell.hk-shell .hk-card p {
+    color: #65756b;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.rx-shell.hk-shell .hk-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.rx-shell.hk-shell .hk-tag {
+    display: inline-block;
+    padding: 6px 12px;
+
+    background: #f1ede3;
+    border: 1px solid #e7ddca;
+    border-radius: 20px;
+    color: #735a38;
+
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.rx-shell.hk-shell .hk-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+/* =====================================================
+   SEARCH AND FILTERS
+   ===================================================== */
+
+.rx-shell.hk-shell .hk-toolbar,
+.rx-shell.hk-shell .rx-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.rx-shell.hk-shell .hk-toolbar input,
+.rx-shell.hk-shell .hk-toolbar select {
+    max-width: 100%;
+}
+
+.rx-shell.hk-shell .hk-toolbar input {
+    flex: 1;
+    min-width: 160px;
+}
+
+.rx-shell.hk-shell .rx-search {
+    flex: 1;
+    min-width: 180px;
+}
+
+/* =====================================================
+   INPUTS
+   ===================================================== */
+
+.rx-shell.hk-shell input,
+.rx-shell.hk-shell select,
+.rx-shell.hk-shell textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+
+    padding: 11px 12px;
+
+    background: #ffffff;
+    border: 1px solid #ddd9cf;
+    border-radius: 8px;
+    color: #2c3d32;
+
+    font: inherit;
+    font-size: 14px;
+}
+
+.rx-shell.hk-shell textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.rx-shell.hk-shell :is(input, textarea)::placeholder {
+    color: #89978d;
+}
+
+.rx-shell.hk-shell :is(input, select, textarea):focus-visible {
+    border-color: #ae8b59;
+    outline: 3px solid #b28b54;
+    outline-offset: 2px;
+}
+
+/* =====================================================
+   CLEANING CHECKLIST
+   ===================================================== */
+
+.rx-shell.hk-shell .hk-checklist {
+    display: grid;
+    gap: 12px;
+    margin: 18px 0;
+}
+
+.rx-shell.hk-shell .hk-checklist label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px;
+
+    background: #f8f6f1;
+    border: 1px solid #eee9df;
+    border-radius: 10px;
+
+    color: #35483b;
+}
+
+.rx-shell.hk-shell .hk-checklist input {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    accent-color: #425c4a;
+}
+
+/* =====================================================
+   DIALOG
+   ===================================================== */
+
+.rx-shell.hk-shell .hk-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    display: grid;
+    place-items: center;
+    padding: 16px;
+
+    background: rgba(15, 25, 19, 0.65);
+}
+
+.rx-shell.hk-shell .hk-dialog {
+    width: min(560px, calc(100vw - 32px));
+    max-height: 85vh;
+    overflow: auto;
+
+    padding: 28px;
+
+    background: #ffffff;
+    border: 1px solid #e6e1d6;
+    border-radius: 18px;
+    color: #2d3c32;
+
+    box-shadow: 0 20px 70px rgba(20, 32, 24, 0.18);
+}
+
+.rx-shell.hk-shell .hk-dialog label:not(.hk-checklist label) {
+    display: grid;
+    gap: 8px;
+    margin: 14px 0;
+}
+
+.rx-shell.hk-shell .hk-dialog textarea {
+    min-height: 110px;
+}
+
+/* =====================================================
+   MY PROFILE
+   ===================================================== */
+
+.rx-shell.hk-shell .rx-main > section {
+    min-width: 0;
+}
+
+.rx-shell.hk-shell .rx-main > section > p {
+    color: #65756b;
+    overflow-wrap: anywhere;
+}
+
+.rx-shell.hk-shell .rx-main .card {
+    width: 100%;
+    max-width: 760px;
+    margin: 20px 0;
+    padding: 26px;
+}
+
+.rx-shell.hk-shell .rx-main .card h2 {
+    margin: 0 0 18px;
+}
+
+.rx-shell.hk-shell .rx-main .card label {
+    display: grid;
+    gap: 8px;
+
+    margin: 0 0 18px;
+
+    color: #34473a;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.rx-shell.hk-shell .rx-main .card input {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+
+    padding: 11px 12px;
+
+    background: #ffffff;
+    border: 1px solid #ddd9cf;
+    border-radius: 8px;
+    color: #2c3d32;
+    font: inherit;
+}
+
+/* =====================================================
+   MESSAGES
+   ===================================================== */
+
+.rx-shell.hk-shell .rx-error,
+.rx-shell.hk-shell .error {
+    padding: 14px 16px;
+    background: #fff2f1;
+    border: 1px solid #ebcccc;
+    border-radius: 10px;
+    color: #8c3030;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.rx-shell.hk-shell .rx-success,
+.rx-shell.hk-shell .hk-success {
+    padding: 14px 16px;
+    background: #eff8f0;
+    border: 1px solid #cee2d1;
+    border-radius: 10px;
+    color: #285a38;
+    font-size: 13px;
+}
+
+.rx-shell.hk-shell .rx-empty,
+.rx-shell.hk-shell .hk-empty {
+    padding: 35px 12px;
+    color: #718077;
+    text-align: center;
+}
+
+/* =====================================================
+   PAGINATION
+   ===================================================== */
+
+.rx-shell.hk-shell .hk-pagination,
+.rx-shell.hk-shell .rx-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 24px 0;
+    color: #65756b;
+}
+
+/* =====================================================
+   TABLES
+   ===================================================== */
+
+.rx-shell.hk-shell .rx-table-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+}
+
+.rx-shell.hk-shell .rx-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    text-align: left;
+}
+
+.rx-shell.hk-shell .rx-table th {
+    background: #f4f1e9;
+    color: #405144;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.rx-shell.hk-shell .rx-table th,
+.rx-shell.hk-shell .rx-table td {
+    min-width: 90px;
+    max-width: 300px;
+    padding: 14px 12px;
+    border-bottom: 1px solid #ece9e1;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+}
+
+.rx-shell.hk-shell .rx-table td {
+    color: #425147;
+}
+
+.rx-shell.hk-shell .rx-table tbody tr:hover {
+    background: #fcfbf8;
+}
+
+/* =====================================================
+   SKIP LINK
+   ===================================================== */
+
+.rx-shell.hk-shell .rx-skip {
+    position: fixed;
+    top: -100px;
+    left: 15px;
+    z-index: 1000;
+
+    padding: 12px;
+
+    background: #ffffff;
+    border: 2px solid #b28b54;
+    border-radius: 6px;
+    color: #1d3024;
+}
+
+.rx-shell.hk-shell .rx-skip:focus {
+    top: 12px;
+}
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 1150px) {
+    .rx-shell.hk-shell {
+        grid-template-columns: 215px minmax(0, 1fr);
+    }
+
+    .rx-shell.hk-shell .rx-sidebar {
+        padding: 24px 14px;
+    }
+
+    .rx-shell.hk-shell .rx-main {
+        padding: 24px;
+    }
+
+    .rx-shell.hk-shell .rx-hero {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .rx-shell.hk-shell .rx-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 760px) {
+    .rx-shell.hk-shell {
+        display: block;
+    }
+
+    .rx-shell.hk-shell .rx-sidebar {
+        position: static;
+        height: auto;
+        overflow: visible;
+
+        gap: 16px;
+        padding: 18px;
+
+        border-right: 0;
+        border-bottom: 1px solid #405044;
+    }
+
+    .rx-shell.hk-shell .rx-mobile-toggle {
+        display: block;
+        min-height: 44px;
+        padding: 10px;
+
+        background: transparent;
+        border: 1px solid rgba(223, 204, 173, 0.45);
+        border-radius: 8px;
+        color: #ffffff;
+    }
+
+    .rx-shell.hk-shell .rx-nav {
+        display: none;
+    }
+
+    .rx-shell.hk-shell .rx-nav.is-open {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .rx-shell.hk-shell .rx-user {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+        margin-top: 0;
+        padding-top: 12px;
+    }
+
+    .rx-shell.hk-shell .rx-user small {
+        grid-column: 1;
+    }
+
+    .rx-shell.hk-shell .rx-user button {
+        grid-column: 2;
+        grid-row: 1 / 3;
+    }
+
+    .rx-shell.hk-shell .rx-main {
+        padding: 20px 14px;
+    }
+
+    .rx-shell.hk-shell .rx-hero {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+
+    .rx-shell.hk-shell .hk-list {
+        grid-template-columns: 1fr;
+    }
+
+    .rx-shell.hk-shell .hk-card {
+        padding: 18px;
+    }
+
+    .rx-shell.hk-shell .hk-top {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .rx-shell.hk-shell .hk-toolbar > * {
+        width: 100%;
+    }
+
+    .rx-shell.hk-shell .hk-dialog {
+        padding: 20px;
+    }
+
+    .rx-shell.hk-shell .rx-main .card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rx-shell.hk-shell .rx-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .rx-shell.hk-shell .rx-stat,
+    .rx-shell.hk-shell .rx-stats article {
+        padding: 16px 12px;
+    }
+
+    .rx-shell.hk-shell .rx-stat strong,
+    .rx-shell.hk-shell .rx-stats article strong {
+        font-size: 23px;
+    }
+
+    .rx-shell.hk-shell .rx-nav.is-open {
+        grid-template-columns: 1fr;
+    }
+
+    .rx-shell.hk-shell .rx-main .card {
+        padding: 18px;
+    }
+}
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .rx-shell.hk-shell .rx-nav a,
+    .rx-shell.hk-shell .rx-button {
+        transition: none;
+    }
+}
+/* =====================================================
+   HOUSEKEEPING = ADMIN / MANAGER LOOK (teal theme)
+   (yeh block housekeeping.css ke bilkul end mein rahe)
+   ===================================================== */
+
+.rx-shell.hk-shell {
+    --rc-primary: #326863;
+    --rc-dark: #1f4d49;
+    --rc-deep: #17403c;
+    --rc-accent: #d2b58a;
+    --rc-bg: #f4f7f6;
+    --rc-border: #e3ebe9;
+    --rc-soft: #eaf1ef;
+    --rc-text: #2a3f3c;
+    --rc-muted: #6b807c;
+
+    background: var(--rc-bg);
+    color: var(--rc-text);
+}
+
+.rx-shell.hk-shell h1,
+.rx-shell.hk-shell h2,
+.rx-shell.hk-shell h3 {
+    color: var(--rc-dark);
+}
+
+.rx-shell.hk-shell a {
+    color: var(--rc-primary);
+}
+
+/* ---------- Sidebar ---------- */
+.rx-shell.hk-shell .rx-sidebar {
+    background: linear-gradient(180deg, var(--rc-deep), var(--rc-primary));
+    border-right: 0;
+    color: #ffffff;
+}
+
+.rx-shell.hk-shell .rx-brand,
+.rx-shell.hk-shell .rx-brand strong {
+    color: #ffffff;
+}
+
+.rx-shell.hk-shell .rx-brand small {
+    color: var(--rc-accent);
+}
+
+.rx-shell.hk-shell .rx-monogram {
+    background: var(--rc-accent);
+    color: var(--rc-deep);
+}
+
+.rx-shell.hk-shell .rx-nav a {
+    background: transparent;
+    border: 0;
+    border-radius: 12px;
+    color: #ffffff;
+}
+
+.rx-shell.hk-shell .rx-nav a:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+}
+
+/* Active item: white box, teal text */
+.rx-shell.hk-shell .rx-nav a.active,
+.rx-shell.hk-shell .rx-nav a.active:hover {
+    background: #ffffff;
+    border: 0;
+    box-shadow: none;
+    color: var(--rc-primary);
+    font-weight: 700;
+}
+
+.rx-shell.hk-shell .rx-user {
+    border-top-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+.rx-shell.hk-shell .rx-user strong,
+.rx-shell.hk-shell .rx-user h2,
+.rx-shell.hk-shell .rx-user h3 {
+    color: #ffffff;
+}
+
+.rx-shell.hk-shell .rx-user small,
+.rx-shell.hk-shell .rx-user p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.rx-shell.hk-shell .rx-user a {
+    color: var(--rc-accent);
+}
+
+/* Sign out button */
+.rx-shell.hk-shell .rx-user .rx-button,
+.rx-shell.hk-shell .rx-user button {
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+}
+
+.rx-shell.hk-shell .rx-user .rx-button:hover:not(:disabled),
+.rx-shell.hk-shell .rx-user button:hover:not(:disabled) {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: var(--rc-primary);
+}
+
+/* ---------- Main + Hero ---------- */
+.rx-shell.hk-shell .rx-main {
+    background: var(--rc-bg);
+}
+
+.rx-shell.hk-shell .rx-hero {
+    background: linear-gradient(120deg, var(--rc-deep), var(--rc-primary));
+    border: 0;
+    border-left: 6px solid var(--rc-accent);
+    border-radius: 22px;
+}
+
+.rx-shell.hk-shell .rx-hero h1,
+.rx-shell.hk-shell .rx-hero h2,
+.rx-shell.hk-shell .rx-hero h3 {
+    color: #ffffff;
+}
+
+.rx-shell.hk-shell .rx-hero p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.rx-shell.hk-shell .rx-eyebrow {
+    color: var(--rc-primary);
+}
+
+.rx-shell.hk-shell .rx-hero .rx-eyebrow {
+    color: var(--rc-accent);
+}
+
+/* ---------- Buttons ---------- */
+.rx-shell.hk-shell .rx-button,
+.rx-shell.hk-shell a.rx-button,
+.rx-shell.hk-shell .rx-main .card button,
+.rx-shell.hk-shell .hk-actions button,
+.rx-shell.hk-shell .hk-dialog button {
+    background: var(--rc-primary);
+    border: 1px solid var(--rc-primary);
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.rx-shell.hk-shell .rx-button:hover:not(:disabled),
+.rx-shell.hk-shell a.rx-button:hover,
+.rx-shell.hk-shell .rx-main .card button:hover:not(:disabled),
+.rx-shell.hk-shell .hk-actions button:hover:not(:disabled),
+.rx-shell.hk-shell .hk-dialog button:hover:not(:disabled) {
+    background: var(--rc-dark);
+    border-color: var(--rc-dark);
+    color: #ffffff;
+}
+
+/* Secondary = white outline */
+.rx-shell.hk-shell .rx-button.rx-secondary,
+.rx-shell.hk-shell a.rx-button.rx-secondary {
+    background: #ffffff;
+    border: 1px solid var(--rc-border);
+    color: var(--rc-primary);
+}
+
+.rx-shell.hk-shell .rx-button.rx-secondary:hover:not(:disabled),
+.rx-shell.hk-shell a.rx-button.rx-secondary:hover {
+    background: var(--rc-soft);
+    border-color: var(--rc-primary);
+    color: var(--rc-dark);
+}
+
+/* Hero ke andar buttons: white */
+.rx-shell.hk-shell .rx-hero .rx-button,
+.rx-shell.hk-shell .rx-hero .rx-button:not(.rx-secondary) {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    color: var(--rc-primary);
+}
+
+.rx-shell.hk-shell .rx-hero .rx-button:hover:not(:disabled),
+.rx-shell.hk-shell .rx-hero .rx-button:not(.rx-secondary):hover {
+    background: var(--rc-soft);
+    border-color: var(--rc-soft);
+    color: var(--rc-dark);
+}
+
+/* ---------- Cards, stats, panels ---------- */
+.rx-shell.hk-shell .rx-stat,
+.rx-shell.hk-shell .rx-stats article,
+.rx-shell.hk-shell .rx-panel,
+.rx-shell.hk-shell .hk-card,
+.rx-shell.hk-shell .card {
+    background: #ffffff;
+    border: 1px solid var(--rc-border);
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(50, 104, 99, 0.06);
+}
+
+.rx-shell.hk-shell .rx-stat::before,
+.rx-shell.hk-shell .rx-stats article::before {
+    background: var(--rc-accent);
+}
+
+.rx-shell.hk-shell .rx-stat span,
+.rx-shell.hk-shell .rx-stats article span,
+.rx-shell.hk-shell .rx-muted {
+    color: var(--rc-muted);
+}
+
+.rx-shell.hk-shell .rx-stat strong,
+.rx-shell.hk-shell .rx-stats article strong {
+    color: var(--rc-primary);
+}
+
+.rx-shell.hk-shell .rx-shortcuts a {
+    background: var(--rc-soft);
+    color: var(--rc-dark);
+}
+
+.rx-shell.hk-shell .rx-shortcuts a:hover {
+    background: #d9e7e4;
+    color: var(--rc-dark);
+}
+
+/* ---------- Housekeeping task cards ---------- */
+.rx-shell.hk-shell .hk-card h2 {
+    color: var(--rc-dark);
+}
+
+.rx-shell.hk-shell .hk-card p {
+    color: var(--rc-muted);
+}
+
+.rx-shell.hk-shell .hk-tag {
+    background: var(--rc-soft);
+    border: 1px solid var(--rc-border);
+    color: var(--rc-dark);
+}
+
+/* ---------- Checklist ---------- */
+.rx-shell.hk-shell .hk-checklist label {
+    background: var(--rc-soft);
+    border: 1px solid var(--rc-border);
+    color: var(--rc-dark);
+}
+
+.rx-shell.hk-shell .hk-checklist input {
+    accent-color: var(--rc-primary);
+}
+
+/* ---------- Forms ---------- */
+.rx-shell.hk-shell input,
+.rx-shell.hk-shell select,
+.rx-shell.hk-shell textarea {
+    background: #ffffff;
+    border: 1px solid var(--rc-border);
+    border-radius: 10px;
+    color: var(--rc-text);
+    font-weight: 400;
+}
+
+.rx-shell.hk-shell :is(input, select, textarea):focus,
+.rx-shell.hk-shell :is(input, select, textarea):focus-visible {
+    border-color: var(--rc-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(50, 104, 99, 0.18);
+}
+
+.rx-shell.hk-shell .rx-toolbar label,
+.rx-shell.hk-shell .rx-field,
+.rx-shell.hk-shell .rx-main .card label,
+.rx-shell.hk-shell .hk-dialog label {
+    color: var(--rc-dark);
+    font-weight: 600;
+}
+
+/* ---------- Tables ---------- */
+.rx-shell.hk-shell .rx-table th {
+    background: var(--rc-soft);
+    color: var(--rc-dark);
+}
+
+.rx-shell.hk-shell .rx-table th,
+.rx-shell.hk-shell .rx-table td {
+    border-bottom-color: var(--rc-border);
+}
+
+.rx-shell.hk-shell .rx-table td {
+    color: var(--rc-text);
+}
+
+.rx-shell.hk-shell .rx-table tbody tr:hover {
+    background: #f7faf9;
+}
+
+/* ---------- Dialog ---------- */
+.rx-shell.hk-shell .hk-backdrop {
+    background: rgba(15, 40, 37, 0.6);
+}
+
+.rx-shell.hk-shell .hk-dialog {
+    background: #ffffff;
+    border: 1px solid var(--rc-border);
+    border-radius: 20px;
+    color: var(--rc-text);
+}
+
+/* ---------- Messages ---------- */
+.rx-shell.hk-shell .rx-success,
+.rx-shell.hk-shell .hk-success,
+.rx-shell.hk-shell .gs-success {
+    background: #eef7f3;
+    border: 1px solid #c9e1d8;
+    border-radius: 10px;
+    color: #1f5a46;
+}
+
+.rx-shell.hk-shell .rx-error,
+.rx-shell.hk-shell .error,
+.rx-shell.hk-shell .gs-error {
+    background: #fff2f1;
+    border: 1px solid #ebcccc;
+    border-radius: 10px;
+    color: #8c3030;
+}
+
+.rx-shell.hk-shell .gs-error,
+.rx-shell.hk-shell .gs-success {
+    margin: 0;
+    padding: 14px 16px;
+    font-size: 13px;
+}
+
+.rx-shell.hk-shell .rx-empty,
+.rx-shell.hk-shell .hk-empty,
+.rx-shell.hk-shell .hk-pagination,
+.rx-shell.hk-shell .rx-pagination {
+    color: var(--rc-muted);
+}
+
+/* ---------- Focus ---------- */
+.rx-shell.hk-shell :is(button, a, [tabindex]):focus-visible {
+    outline: 3px solid var(--rc-accent);
+    outline-offset: 2px;
+}
+
+/* =====================================================
+   HOUSEKEEPING — MY PROFILE PAGE (shared MyProfilePage)
+   ===================================================== */
+
+.rx-shell.hk-shell .gs-profile-page {
+    display: grid;
+    gap: 24px;
+    max-width: 1100px;
+    min-width: 0;
+}
+
+/* Hero header */
+.rx-shell.hk-shell .gs-profile-page > header {
+    padding: 30px;
+    background: linear-gradient(120deg, var(--rc-deep), var(--rc-primary));
+    border: 0;
+    border-left: 6px solid var(--rc-accent);
+    border-radius: 22px;
+}
+
+.rx-shell.hk-shell .gs-profile-page > header h1 {
+    margin: 10px 0;
+    color: #ffffff;
+    font: clamp(29px, 3.2vw, 40px) / 1.18 Georgia, serif;
+}
+
+.rx-shell.hk-shell .gs-profile-page > header p {
+    margin: 6px 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 14px;
+}
+
+.rx-shell.hk-shell .gs-profile-page .gs-eyebrow {
+    display: block;
+    margin: 0;
+    background: transparent;
+    color: var(--rc-accent);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+/* Cards */
+.rx-shell.hk-shell .gs-card,
+.rx-shell.hk-shell .gs-profile-page form {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+    padding: 26px;
+    background: #ffffff;
+    border: 1px solid var(--rc-border);
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(50, 104, 99, 0.06);
+}
+
+.rx-shell.hk-shell .gs-card h2 {
+    margin: 0 0 6px;
+    color: var(--rc-dark);
+    font: 700 20px / 1.25 Arial, sans-serif;
+}
+
+.rx-shell.hk-shell .gs-card h2 + p {
+    margin: 0 0 20px;
+    color: var(--rc-muted);
+    font-size: 13px;
+}
+
+/* Form fields */
+.rx-shell.hk-shell .gs-form label {
+    display: grid;
+    gap: 7px;
+    margin: 16px 0 0;
+    color: var(--rc-dark);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.rx-shell.hk-shell .gs-form input {
+    min-height: 46px;
+    padding: 11px 14px;
+    background: #ffffff;
+    border: 1px solid var(--rc-border);
+    border-radius: 10px;
+    color: var(--rc-text);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.rx-shell.hk-shell .gs-form input:disabled,
+.rx-shell.hk-shell .gs-form input[readonly] {
+    background: var(--rc-soft);
+    color: var(--rc-muted);
+}
+
+/* Form buttons */
+.rx-shell.hk-shell .gs-form button {
+    min-height: 44px;
+    margin-top: 22px;
+    padding: 11px 20px;
+    background: var(--rc-primary);
+    border: 1px solid var(--rc-primary);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.rx-shell.hk-shell .gs-form button:hover:not(:disabled) {
+    background: var(--rc-dark);
+    border-color: var(--rc-dark);
+    color: #ffffff;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 760px) {
+    .rx-shell.hk-shell .rx-sidebar {
+        border-bottom: 3px solid var(--rc-accent);
+    }
+
+    .rx-shell.hk-shell .rx-mobile-toggle {
+        background: transparent;
+        border-color: rgba(255, 255, 255, 0.6);
+        color: #ffffff;
+    }
+
+    .rx-shell.hk-shell .gs-profile-page > header {
+        padding: 22px 18px;
+    }
+
+    .rx-shell.hk-shell .gs-card,
+    .rx-shell.hk-shell .gs-profile-page form {
+        padding: 18px 14px;
+    }
+}

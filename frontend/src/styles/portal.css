@@ -1,0 +1,581 @@
+/* =====================================================
+   LUXURYSTAY — SHARED STAFF PORTAL
+   Charcoal, ivory and soft gold theme
+   ===================================================== */
+
+.lh-portal {
+    --portal-primary: #34483b;
+    --portal-dark: #26382e;
+    --portal-muted: #65756b;
+    --portal-border: #e7e3d9;
+    --portal-gold: #c5a574;
+    --portal-background: #f7f6f1;
+
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    min-height: 100vh;
+
+    background: var(--portal-background);
+    color: #2d3c32;
+}
+
+.lh-portal,
+.lh-portal *,
+.lh-portal *::before,
+.lh-portal *::after {
+    box-sizing: border-box;
+}
+
+/* =====================================================
+   SIDEBAR
+   ===================================================== */
+
+.lh-portal > aside {
+    padding: 32px 24px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(197, 165, 116, 0.1),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #17231e 0%,
+            #24372b 100%
+        );
+
+    border-right: 1px solid #35473b;
+    color: #edf2eb;
+}
+
+.lh-portal > aside h2 {
+    margin: 0 0 28px;
+    color: #ffffff;
+    font: 30px Georgia, serif;
+    letter-spacing: -0.03em;
+}
+
+.lh-portal > aside p {
+    color: #c6d2c7;
+    font-size: 13px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.lh-portal > aside nav {
+    display: grid;
+    gap: 8px;
+    margin: 28px 0;
+}
+
+.lh-portal > aside nav a {
+    padding: 12px 14px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+
+    color: #d8e2d9;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.lh-portal > aside nav a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+.lh-portal > aside nav a.active,
+.lh-portal > aside nav a.active:hover {
+    background: #c5a574;
+    border-color: #c5a574;
+    box-shadow: none;
+    color: #19251e;
+    font-weight: 700;
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.lh-portal button {
+    padding: 11px 16px;
+
+    background: var(--portal-primary);
+    border: 1px solid var(--portal-primary);
+    border-radius: 8px;
+    color: #ffffff;
+
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.lh-portal button:hover:not(:disabled) {
+    background: #1c2c22;
+    border-color: #1c2c22;
+    transform: translateY(-1px);
+}
+
+.lh-portal button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+/* Sidebar button */
+
+.lh-portal > aside button {
+    background: transparent;
+    border-color: rgba(223, 204, 173, 0.45);
+    color: #f7eee0;
+}
+
+.lh-portal > aside button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #c5a574;
+    color: #ffffff;
+}
+
+/* Keyboard focus */
+
+.lh-portal :is(
+    a,
+    button,
+    input,
+    select,
+    textarea,
+    [tabindex]
+):focus-visible {
+    outline: 3px solid #b28b54;
+    outline-offset: 3px;
+}
+
+/* =====================================================
+   MAIN CONTENT
+   ===================================================== */
+
+.lh-portal-content {
+    width: 100%;
+    max-width: 1500px;
+    min-width: 0;
+    margin: auto;
+    padding: 38px;
+}
+
+.lh-portal-content h1 {
+    margin: 0 0 18px;
+    color: var(--portal-dark);
+    font: clamp(29px, 3vw, 42px) Georgia, serif;
+    letter-spacing: -0.03em;
+}
+
+.lh-portal-content h2 {
+    color: var(--portal-dark);
+    font: 27px Georgia, serif;
+}
+
+.lh-portal-content h3 {
+    color: var(--portal-dark);
+}
+
+.lh-portal-content p {
+    color: var(--portal-muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.lh-portal .card {
+    margin: 22px 0;
+    padding: 26px;
+
+    background: #ffffff;
+    border: 1px solid var(--portal-border);
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(40, 55, 44, 0.035);
+}
+
+/* =====================================================
+   FORMS
+   ===================================================== */
+
+.lh-portal label {
+    display: block;
+    margin: 0 0 17px;
+
+    color: #34473a;
+    font-size: 13px;
+}
+
+.lh-portal :is(input, select, textarea) {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    margin-top: 8px;
+    padding: 12px;
+
+    border: 1px solid #ddd9cf;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #2c3d32;
+    font: inherit;
+}
+
+.lh-portal :is(input, select, textarea):focus {
+    border-color: #ae8b59;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(174, 139, 89, 0.15);
+}
+
+.lh-portal :is(input, textarea)::placeholder {
+    color: #89978d;
+}
+
+.lh-portal .check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lh-portal input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    accent-color: #425c4a;
+}
+
+.lh-portal .error {
+    padding: 14px 18px;
+    border: 1px solid #ebcccc;
+    border-radius: 10px;
+    background: #fff2f1;
+    color: #8c3030;
+}
+
+/* =====================================================
+   TABLES
+   ===================================================== */
+
+.lh-portal .table-wrap {
+    overflow-x: auto;
+}
+
+.lh-portal table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.lh-portal th {
+    background: #f4f1e9;
+    color: #405144;
+    text-align: left;
+}
+
+.lh-portal :is(th, td) {
+    padding: 14px 12px;
+    border-bottom: 1px solid #ece9e1;
+}
+
+.lh-portal td {
+    color: #425147;
+}
+
+.lh-portal td button {
+    margin: 3px;
+}
+
+.lh-portal .pagination {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* =====================================================
+   ROLE HERO
+   ===================================================== */
+
+.lh-role-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    align-items: center;
+    gap: 30px;
+    padding: 36px;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(197, 165, 116, 0.16),
+            transparent 35%
+        ),
+        linear-gradient(
+            125deg,
+            #1c2a22,
+            #35493a
+        );
+
+    border: 1px solid #35493a;
+    border-radius: 18px;
+}
+
+.lh-role-eyebrow {
+    color: #e2c79d;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.lh-portal-content .lh-role-hero h1,
+.lh-portal-content .lh-role-hero h2,
+.lh-portal-content .lh-role-hero h3 {
+    color: #ffffff;
+}
+
+.lh-role-hero h1 {
+    margin-top: 16px;
+    overflow-wrap: anywhere;
+}
+
+.lh-portal-content .lh-role-hero p {
+    margin: 0 0 20px;
+    color: #d7e2d7;
+    overflow-wrap: anywhere;
+}
+
+.lh-role-badge {
+    display: inline-block;
+    padding: 7px 12px;
+
+    background: #f3ede1;
+    border: 1px solid #e7ddca;
+    border-radius: 20px;
+    color: #735a38;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* Scope card inside dark hero */
+
+.lh-role-scope {
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e7e3d9;
+    border-radius: 14px;
+}
+
+.lh-role-scope > span {
+    display: block;
+    color: #6d7f72;
+    font-size: 11px;
+}
+
+.lh-role-scope strong {
+    display: block;
+    margin: 10px 0;
+    color: #26382e;
+    font-size: 22px;
+    overflow-wrap: anywhere;
+}
+
+.lh-portal-content .lh-role-hero .lh-role-scope p {
+    margin: 0;
+    color: #65756b;
+    font-size: 12px;
+}
+
+/* Status strip */
+
+.lh-role-status {
+    margin: 20px 0 30px;
+    padding: 14px 18px;
+
+    background: #f4f1e9;
+    border: 1px solid #e8e1d4;
+    border-radius: 10px;
+    color: #4c5b50;
+}
+
+/* =====================================================
+   ROLE MODULES
+   ===================================================== */
+
+.lh-role-section-heading {
+    margin: 30px 0 18px;
+}
+
+.lh-role-section-heading h2 {
+    margin: 8px 0;
+}
+
+.lh-role-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.lh-role-module {
+    padding: 26px;
+    background: #ffffff;
+    border: 1px solid var(--portal-border);
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(40, 55, 44, 0.035);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.lh-role-module:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(40, 55, 44, 0.08);
+}
+
+.lh-role-number {
+    display: grid;
+    place-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    background: #f4eee3;
+    border: 1px solid #e9dfce;
+    border-radius: 11px;
+
+    color: #896b42;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.lh-role-module h3 {
+    margin: 22px 0 10px;
+    font-size: 17px;
+}
+
+.lh-role-module p {
+    font-size: 12px;
+}
+
+.lh-role-coming {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 5px 9px;
+
+    background: #f4f1e9;
+    border-radius: 6px;
+    color: #74654d;
+    font-size: 10px;
+}
+
+.lh-role-note {
+    margin-top: 24px;
+    padding: 22px 26px;
+
+    background: #ffffff;
+    border: 1px solid var(--portal-border);
+    border-radius: 14px;
+}
+
+.lh-role-note h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+}
+
+.lh-role-note p {
+    margin: 0;
+    font-size: 12px;
+}
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 1100px) {
+    .lh-portal {
+        grid-template-columns: 200px minmax(0, 1fr);
+    }
+
+    .lh-portal-content {
+        padding: 26px;
+    }
+
+    .lh-role-hero {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .lh-role-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+    .lh-portal {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .lh-portal > aside {
+        padding: 20px;
+        border-right: 0;
+        border-bottom: 1px solid #405044;
+    }
+
+    .lh-portal > aside h2 {
+        margin-bottom: 12px;
+    }
+
+    .lh-portal > aside nav {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 18px 0;
+    }
+
+    .lh-portal-content {
+        padding: 24px 16px;
+    }
+
+    .lh-role-hero {
+        gap: 20px;
+        padding: 24px;
+        border-radius: 16px;
+    }
+
+    .lh-role-module {
+        padding: 22px;
+    }
+
+    .lh-portal .card {
+        padding: 20px;
+    }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .lh-portal > aside nav a,
+    .lh-portal button,
+    .lh-role-module {
+        transition: none;
+    }
+
+    .lh-portal button:hover:not(:disabled),
+    .lh-role-module:hover {
+        transform: none;
+    }
+}

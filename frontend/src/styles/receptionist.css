@@ -1,0 +1,2046 @@
+.reception-dash {
+    width: 100%;
+    min-width: 0;
+    color: #183044;
+}
+
+.reception-dash *,
+.reception-dash *::before,
+.reception-dash *::after {
+    box-sizing: border-box;
+}
+
+.reception-dash .reception-dash__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.reception-dash .reception-dash__header h1 {
+    margin: 4px 0 10px;
+    font-size: clamp(24px, 4vw, 34px);
+    line-height: 1.2;
+}
+
+.reception-dash .reception-dash__header p {
+    line-height: 1.6;
+}
+
+.reception-dash .reception-dash__eyebrow {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #53677a;
+}
+
+.reception-dash .reception-dash__header button {
+    padding: 11px 18px;
+    border: 0;
+    border-radius: 10px;
+    background: #17384c;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+}
+
+.reception-dash .reception-dash__header button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.reception-dash button:focus-visible,
+.reception-dash .reception-dash__table-wrap:focus-visible {
+    outline: 3px solid #247fa5;
+    outline-offset: 4px;
+}
+
+.reception-dash .reception-dash__cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.reception-dash .reception-dash__card {
+    padding: 22px;
+    background: #fff;
+    border: 1px solid #dce4eb;
+    border-radius: 16px;
+    overflow-wrap: anywhere;
+}
+
+.reception-dash .reception-dash__card p {
+    margin: 0 0 12px;
+    color: #53677a;
+    font-size: 14px;
+}
+
+.reception-dash .reception-dash__card strong {
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.3;
+    font-variant-numeric: tabular-nums;
+}
+
+.reception-dash .reception-dash__hint {
+    color: #53677a;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.reception-dash .reception-dash__section {
+    margin-top: 24px;
+    padding: 22px;
+    background: #fff;
+    border: 1px solid #dce4eb;
+    border-radius: 16px;
+}
+
+.reception-dash .reception-dash__section h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+.reception-dash .reception-dash__table-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.reception-dash table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.reception-dash th,
+.reception-dash td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5ebf0;
+    white-space: nowrap;
+}
+
+.reception-dash th {
+    background: #f3f6f9;
+    font-weight: 600;
+}
+
+.reception-dash .reception-dash__error {
+    padding: 14px;
+    border: 1px solid #e2aaaa;
+    border-radius: 10px;
+    background: #fff4f4;
+    color: #8c2424;
+}
+
+@media (max-width: 900px) {
+    .reception-dash .reception-dash__cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .reception-dash .reception-dash__cards {
+        grid-template-columns: 1fr;
+    }
+
+    .reception-dash .reception-dash__section {
+        padding: 16px;
+    }
+}
+
+/* Receptionist workspace */
+
+.rx-shell {
+    --rx-green: #326863;
+    --rx-dark: #244e4a;
+    --rx-line: #d3e3df;
+    --rx-muted: #5a706d;
+    --rx-surface: #f7fafa;
+
+    display: grid;
+    grid-template-columns: 248px minmax(0, 1fr);
+    min-height: 100vh;
+    background: var(--rx-surface);
+    color: #293e3c;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    isolation: isolate;
+}
+
+.rx-shell *,
+.rx-shell *::before,
+.rx-shell *::after {
+    box-sizing: border-box;
+}
+
+.rx-shell h1,
+.rx-shell h2,
+.rx-shell h3 {
+    color: var(--rx-dark);
+    line-height: 1.2;
+}
+
+.rx-shell h1 {
+    margin: 12px 0;
+    font: clamp(29px, 3.2vw, 43px) / 1.18 Georgia, serif;
+}
+
+.rx-shell h2 {
+    margin: 0 0 16px;
+    font: 25px / 1.25 Georgia, serif;
+}
+
+.rx-shell h3 {
+    margin: 0 0 10px;
+    font-size: 15px;
+}
+
+.rx-shell p {
+    margin: 8px 0 16px;
+    line-height: 1.7;
+}
+
+.rx-shell a {
+    color: var(--rx-dark);
+}
+
+.rx-shell button,
+.rx-shell input,
+.rx-shell select,
+.rx-shell textarea {
+    font: inherit;
+}
+
+.rx-shell :is(
+    button,
+    a,
+    input,
+    select,
+    textarea,
+    [tabindex]
+):focus-visible {
+    outline: 3px solid #428078;
+    outline-offset: 3px;
+}
+
+.rx-shell button {
+    cursor: pointer;
+}
+
+.rx-shell button:disabled {
+    opacity: 0.55;
+    cursor: wait;
+}
+
+/* Sidebar */
+
+.rx-shell .rx-sidebar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 30px 20px;
+    background: #e3f1ef;
+    border-right: 1px solid var(--rx-line);
+}
+
+.rx-shell .rx-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--rx-dark);
+}
+
+.rx-shell .rx-brand strong {
+    display: block;
+    font: 27px Georgia, serif;
+}
+
+.rx-shell .rx-brand small {
+    display: block;
+    margin-top: 5px;
+    font-size: 8px;
+    letter-spacing: 1.4px;
+}
+
+.rx-shell .rx-monogram {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: var(--rx-dark);
+    color: #fff;
+    font: 30px Georgia, serif;
+}
+
+.rx-shell .rx-nav {
+    display: grid;
+    gap: 6px;
+}
+
+.rx-shell .rx-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 10px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.rx-shell .rx-nav a span {
+    font-size: 10px;
+    font-weight: 400;
+    opacity: 0.65;
+}
+
+.rx-shell .rx-nav a.active {
+    background: #fff;
+    box-shadow: 0 4px 12px #244e4a08;
+}
+
+.rx-shell .rx-nav a:hover {
+    background: #f5faf9;
+}
+
+.rx-shell .rx-user {
+    display: grid;
+    gap: 9px;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--rx-line);
+    overflow-wrap: anywhere;
+}
+
+.rx-shell .rx-user small {
+    color: var(--rx-muted);
+    font-size: 11px;
+}
+
+.rx-shell .rx-mobile-toggle {
+    display: none;
+}
+
+/* Main area */
+
+.rx-shell .rx-main {
+    width: 100%;
+    max-width: 1600px;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 36px;
+}
+
+.rx-shell .rx-page {
+    min-width: 0;
+}
+
+.rx-shell .rx-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+    padding: 30px;
+    border: 1px solid var(--rx-line);
+    border-radius: 20px;
+    background: linear-gradient(
+        125deg,
+        #e3f1ef,
+        #eff6f5
+    );
+}
+
+.rx-shell .rx-hero p {
+    margin: 0;
+    color: var(--rx-muted);
+}
+
+.rx-shell .rx-eyebrow {
+    color: var(--rx-green);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.rx-shell .rx-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Buttons */
+
+.rx-shell .rx-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 11px 16px;
+    border: 1px solid var(--rx-green);
+    border-radius: 9px;
+    background: var(--rx-green);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.rx-shell .rx-button:hover:not(:disabled) {
+    background: var(--rx-dark);
+    color: #fff;
+}
+
+.rx-shell .rx-secondary {
+    border-color: var(--rx-line);
+    background: #fff;
+    color: var(--rx-dark);
+}
+
+/* Dashboard */
+
+.rx-shell .rx-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.rx-shell .rx-stat {
+    min-width: 0;
+    padding: 23px;
+    border: 1px solid var(--rx-line);
+    border-radius: 15px;
+    background: #fff;
+}
+
+.rx-shell .rx-stat span {
+    display: block;
+    margin-bottom: 14px;
+    color: var(--rx-muted);
+    font-size: 12px;
+}
+
+.rx-shell .rx-stat strong {
+    color: var(--rx-dark);
+    font-size: clamp(22px, 2.8vw, 31px);
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
+
+.rx-shell .rx-muted {
+    color: var(--rx-muted);
+    font-size: 12px;
+}
+
+.rx-shell .rx-shortcuts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 22px 0;
+}
+
+.rx-shell .rx-shortcuts a {
+    padding: 12px 16px;
+    border-radius: 9px;
+    background: #edf5f2;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.rx-shell .rx-panel {
+    min-width: 0;
+    margin: 20px 0;
+    padding: 24px;
+    border: 1px solid var(--rx-line);
+    border-radius: 16px;
+    background: #fff;
+}
+
+.rx-shell .rx-intro p {
+    color: var(--rx-muted);
+    font-size: 14px;
+}
+
+/* Tables */
+
+.rx-shell .rx-table-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+}
+
+.rx-shell .rx-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 12px;
+}
+
+.rx-shell .rx-table th {
+    background: #eff6f5;
+    color: var(--rx-dark);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.rx-shell .rx-table th,
+.rx-shell .rx-table td {
+    min-width: 90px;
+    max-width: 300px;
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--rx-line);
+    vertical-align: top;
+    overflow-wrap: anywhere;
+}
+
+.rx-shell .rx-table tbody tr:hover {
+    background: #fbfdfc;
+}
+
+.rx-shell .rx-table td:first-child {
+    color: var(--rx-dark);
+    font-weight: 600;
+}
+
+.rx-shell .rx-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    min-width: 130px;
+}
+
+.rx-shell .rx-actions button,
+.rx-shell .rx-actions a {
+    min-height: 36px;
+    padding: 8px 10px;
+    border: 1px solid var(--rx-line);
+    border-radius: 7px;
+    background: #f4f9f7;
+    color: var(--rx-dark);
+    text-decoration: none;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.rx-shell .rx-actions button:hover,
+.rx-shell .rx-actions a:hover {
+    background: #e3f1ef;
+}
+
+.rx-shell .rx-empty {
+    padding: 35px 12px;
+    color: var(--rx-muted);
+    text-align: center;
+    font-weight: 400;
+}
+
+/* Search and forms */
+
+.rx-shell .rx-toolbar {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.rx-shell .rx-toolbar label {
+    display: grid;
+    gap: 7px;
+    color: var(--rx-muted);
+    font-size: 12px;
+}
+
+.rx-shell .rx-search {
+    flex: 1;
+    min-width: 180px;
+}
+
+.rx-shell input,
+.rx-shell select,
+.rx-shell textarea {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 11px 12px;
+    border: 1px solid var(--rx-line);
+    border-radius: 8px;
+    background: #fff;
+    color: #293e3c;
+    font-size: 14px;
+}
+
+.rx-shell textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.rx-shell .rx-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 20px;
+    color: var(--rx-muted);
+    font-size: 12px;
+}
+
+.rx-shell .rx-error {
+    padding: 14px 16px;
+    border: 1px solid #efc6bc;
+    border-radius: 10px;
+    background: #fff0ed;
+    color: #8d2720;
+    font-size: 13px;
+}
+
+.rx-shell .rx-success {
+    padding: 14px 16px;
+    border: 1px solid #bcdcc9;
+    border-radius: 10px;
+    background: #eaf6ef;
+    color: #285a3b;
+    font-size: 13px;
+}
+
+/* Dialogs */
+
+.rx-shell .rx-modal {
+    position: fixed;
+    inset: 0;
+    width: min(720px, calc(100vw - 28px));
+    max-height: 90dvh;
+    margin: auto;
+    padding: 26px;
+    overflow: auto;
+    border: 1px solid var(--rx-line);
+    border-radius: 18px;
+    background: #fff;
+    color: #293e3c;
+    box-shadow: 0 20px 80px #163e3b33;
+}
+
+.rx-shell .rx-modal::backdrop {
+    background: #142d2bb3;
+    backdrop-filter: blur(3px);
+}
+
+.rx-shell .rx-modal-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.rx-shell .rx-modal-heading h2 {
+    margin: 4px 0;
+    font-size: 25px;
+}
+
+.rx-shell .rx-form {
+    margin: 16px 0 0;
+}
+
+.rx-shell .rx-form fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.rx-shell .rx-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.rx-shell .rx-field {
+    display: grid;
+    align-content: start;
+    gap: 7px;
+    min-width: 0;
+    color: var(--rx-dark);
+    font-size: 12px;
+}
+
+.rx-shell .rx-form-footer {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rx-line);
+}
+
+.rx-shell .rx-estimate {
+    padding: 18px 0;
+    border-top: 1px solid var(--rx-line);
+    border-bottom: 1px solid var(--rx-line);
+    color: var(--rx-dark);
+}
+
+.rx-shell .rx-estimate p {
+    color: var(--rx-muted);
+    font-size: 12px;
+}
+
+.rx-shell .rx-details dl {
+    margin: 0;
+}
+
+.rx-shell .rx-details dl > div {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rx-line);
+}
+
+.rx-shell .rx-details dt {
+    color: var(--rx-muted);
+    font-size: 12px;
+}
+
+.rx-shell .rx-details dd {
+    margin: 0;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+/* Invoice */
+
+.rx-shell .rx-print-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.rx-shell .rx-invoice {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px;
+    border: 1px solid var(--rx-line);
+    border-radius: 15px;
+    background: #fff;
+}
+
+.rx-shell .rx-invoice-head,
+.rx-shell .rx-invoice-guests {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rx-line);
+}
+
+.rx-shell .rx-invoice-head > div:last-child {
+    text-align: right;
+}
+
+.rx-shell .rx-invoice p {
+    color: var(--rx-muted);
+    font-size: 13px;
+}
+
+.rx-shell .rx-totals {
+    max-width: 380px;
+    margin: 24px 0 30px auto;
+}
+
+.rx-shell .rx-totals > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--rx-line);
+    font-size: 13px;
+}
+
+.rx-shell .rx-totals dd {
+    margin: 0;
+    font-weight: 600;
+}
+
+.rx-shell .rx-totals > div:last-child {
+    padding: 14px 0;
+    color: var(--rx-dark);
+    font-size: 17px;
+}
+
+.rx-shell .rx-invoice footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rx-line);
+}
+
+.rx-shell .rx-invoice small {
+    color: var(--rx-muted);
+    font-size: 11px;
+}
+
+/* Keyboard navigation */
+
+.rx-shell .rx-skip {
+    position: fixed;
+    top: -100px;
+    left: 15px;
+    z-index: 1000;
+    padding: 12px;
+    background: #fff;
+}
+
+.rx-shell .rx-skip:focus {
+    top: 12px;
+}
+
+/* Tablet */
+
+@media (max-width: 1150px) {
+    .rx-shell {
+        grid-template-columns: 215px minmax(0, 1fr);
+    }
+
+    .rx-shell .rx-main {
+        padding: 24px;
+    }
+
+    .rx-shell .rx-sidebar {
+        padding: 24px 14px;
+    }
+
+    .rx-shell .rx-hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .rx-shell .rx-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 760px) {
+    .rx-shell {
+        display: block;
+    }
+
+    .rx-shell .rx-sidebar {
+        position: static;
+        height: auto;
+        gap: 16px;
+        padding: 18px;
+        overflow: visible;
+        border-right: 0;
+        border-bottom: 1px solid var(--rx-line);
+    }
+
+    .rx-shell .rx-mobile-toggle {
+        display: block;
+        min-height: 44px;
+        padding: 10px;
+        border: 1px solid var(--rx-line);
+        border-radius: 8px;
+        background: #fff;
+        color: var(--rx-dark);
+    }
+
+    .rx-shell .rx-nav {
+        display: none;
+    }
+
+    .rx-shell .rx-nav.is-open {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .rx-shell .rx-user {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-top: 12px;
+    }
+
+    .rx-shell .rx-user small {
+        flex: 1;
+    }
+
+    .rx-shell .rx-user .rx-button {
+        font-size: 11px;
+    }
+
+    .rx-shell .rx-main {
+        padding: 20px 14px;
+    }
+
+    .rx-shell .rx-hero {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+
+    .rx-shell .rx-panel {
+        padding: 18px 14px;
+    }
+
+    .rx-shell .rx-invoice {
+        padding: 22px 16px;
+    }
+
+    .rx-shell .rx-invoice-head,
+    .rx-shell .rx-invoice-guests {
+        gap: 18px;
+    }
+
+    .rx-shell .rx-invoice-head h1 {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rx-shell .rx-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .rx-shell .rx-stat {
+        padding: 16px 12px;
+    }
+
+    .rx-shell .rx-stat strong {
+        font-size: 21px;
+    }
+
+    .rx-shell .rx-stat span {
+        font-size: 11px;
+    }
+
+    .rx-shell .rx-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rx-shell .rx-modal {
+        padding: 20px 16px;
+    }
+
+    .rx-shell .rx-details dl > div {
+        grid-template-columns: 110px minmax(0, 1fr);
+    }
+
+    .rx-shell .rx-invoice-head,
+    .rx-shell .rx-invoice-guests {
+        grid-template-columns: 1fr;
+    }
+
+    .rx-shell .rx-invoice-head > div:last-child {
+        text-align: left;
+    }
+
+    .rx-shell .rx-toolbar > * {
+        width: 100%;
+    }
+}
+
+/* Invoice print / Save as PDF */
+
+@media print {
+    body {
+        margin: 0;
+        background: #fff !important;
+    }
+
+    .rx-shell {
+        display: block;
+        min-height: auto;
+        background: #fff;
+    }
+
+    .rx-shell .rx-sidebar,
+    .rx-shell .rx-print-tools,
+    .rx-shell .rx-skip {
+        display: none !important;
+    }
+
+    .rx-shell .rx-main {
+        max-width: none;
+        padding: 0;
+    }
+
+    .rx-shell .rx-invoice {
+        max-width: none;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+    }
+
+    .rx-shell .rx-invoice-head,
+    .rx-shell .rx-invoice-guests {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .rx-shell .rx-invoice-head > div:last-child {
+        text-align: right;
+    }
+
+    .rx-shell .rx-table-wrap {
+        overflow: visible;
+    }
+
+    .rx-shell .rx-table {
+        font-size: 10px;
+    }
+
+    .rx-shell .rx-table td,
+    .rx-shell .rx-table th {
+        min-width: 0;
+        max-width: none;
+        padding: 8px 6px;
+    }
+
+    .rx-shell .rx-table thead {
+        display: table-header-group;
+    }
+
+    .rx-shell .rx-table tr,
+    .rx-shell .rx-totals,
+    .rx-shell .rx-invoice footer {
+        break-inside: avoid;
+    }
+
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+}
+
+/* =====================================================
+   RECEPTIONIST DASHBOARD — LUXURYSTAY THEME
+   Charcoal, ivory and soft gold
+   ===================================================== */
+
+/*
+   These styles apply to the receptionist shell.
+   Manager and housekeeping shells keep their own styles.
+*/
+
+.rx-shell:not(.manager-shell):not(.hk-shell) {
+    --rx-green: #34483b;
+    --rx-dark: #26382e;
+    --rx-line: #e7e3d9;
+    --rx-muted: #65756b;
+    --rx-surface: #f7f6f1;
+
+    background: var(--rx-surface);
+    color: #2d3c32;
+}
+
+/* =====================================================
+   SIDEBAR
+   ===================================================== */
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-sidebar {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(197, 165, 116, 0.10),
+            transparent 35%
+        ),
+        linear-gradient(180deg, #17231e, #24372b);
+
+    border-right: 1px solid #35473b;
+    color: #edf2eb;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-brand,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-brand strong {
+    color: #ffffff;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-brand small {
+    color: #d9c19b;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-monogram {
+    background: #c5a574;
+    color: #17231e;
+    border-radius: 11px;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-nav {
+    gap: 8px;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-nav a {
+    border: 1px solid transparent;
+    color: #d8e2d9;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-nav a span {
+    color: inherit;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-nav a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-nav a.active,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-nav a.active:hover {
+    background: #c5a574;
+    border-color: #c5a574;
+    box-shadow: none;
+    color: #19251e;
+    font-weight: 700;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-user {
+    border-top-color: rgba(221, 207, 183, 0.2);
+    color: #ffffff;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-user strong {
+    color: #ffffff;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-user small,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-user p {
+    color: #c5d1c6;
+}
+
+/* =====================================================
+   MAIN CONTENT AND HERO
+   ===================================================== */
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-main {
+    min-width: 0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(197, 165, 116, 0.07),
+            transparent 30%
+        ),
+        #f7f6f1;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero {
+    border: 1px solid #35493a;
+    border-radius: 18px;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(197, 165, 116, 0.16),
+            transparent 35%
+        ),
+        linear-gradient(125deg, #1c2a22, #35493a);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero h1,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero h2,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero h3 {
+    color: #ffffff;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero p {
+    color: #d7e2d7;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-eyebrow {
+    color: #896b42;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero .rx-eyebrow {
+    color: #e2c79d;
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-button {
+    background: #304638;
+    border-color: #304638;
+    border-radius: 8px;
+    color: #ffffff;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) a.rx-button {
+    color: #ffffff;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-button:hover:not(:disabled) {
+    background: #1c2c22;
+    border-color: #1c2c22;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-button.rx-secondary,
+.rx-shell:not(.manager-shell):not(.hk-shell) a.rx-button.rx-secondary {
+    background: #ffffff;
+    border-color: #ded9cd;
+    color: #304638;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-button.rx-secondary:hover:not(:disabled) {
+    background: #f8f4ed;
+    border-color: #c4ab86;
+    color: #25382d;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero .rx-button:not(.rx-secondary) {
+    background: #d2b58a;
+    border-color: #d2b58a;
+    color: #1a2a20;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero .rx-button:not(.rx-secondary):hover {
+    background: #e2cda9;
+    border-color: #e2cda9;
+    color: #1a2a20;
+}
+
+/* =====================================================
+   CARDS AND PANELS
+   ===================================================== */
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-stat,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-panel {
+    background: #ffffff;
+    border: 1px solid #e9e5dc;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(40, 55, 44, 0.035);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-stat {
+    position: relative;
+    overflow: hidden;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-stat::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 42px;
+    height: 3px;
+    background: #c5a574;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-stat span,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-muted {
+    color: #65756b;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-stat strong {
+    color: #263a2e;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-shortcuts a {
+    background: #f2eee5;
+    color: #5d4b31;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-shortcuts a:hover {
+    background: #e9dfd0;
+    color: #493a26;
+}
+
+/* =====================================================
+   RECEPTION DASHBOARD SUMMARY
+   ===================================================== */
+
+.reception-dash {
+    min-width: 0;
+    color: #2d3c32;
+}
+
+.reception-dash .reception-dash__header h1,
+.reception-dash .reception-dash__section h2 {
+    color: #25382d;
+}
+
+.reception-dash .reception-dash__header p,
+.reception-dash .reception-dash__hint {
+    color: #65756b;
+}
+
+.reception-dash .reception-dash__eyebrow {
+    color: #896b42;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.reception-dash .reception-dash__card,
+.reception-dash .reception-dash__section {
+    background: #ffffff;
+    border: 1px solid #e9e5dc;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(40, 55, 44, 0.035);
+}
+
+.reception-dash .reception-dash__card strong {
+    color: #263a2e;
+}
+
+.reception-dash th {
+    background: #f4f1e9;
+    color: #405144;
+}
+
+.reception-dash th,
+.reception-dash td {
+    border-bottom-color: #ece9e1;
+}
+
+.reception-dash .reception-dash__table-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* =====================================================
+   FORMS AND TABLES
+   ===================================================== */
+
+.rx-shell:not(.manager-shell):not(.hk-shell) input,
+.rx-shell:not(.manager-shell):not(.hk-shell) select,
+.rx-shell:not(.manager-shell):not(.hk-shell) textarea {
+    background: #ffffff;
+    border-color: #ddd9cf;
+    color: #2c3d32;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) input:focus,
+.rx-shell:not(.manager-shell):not(.hk-shell) select:focus,
+.rx-shell:not(.manager-shell):not(.hk-shell) textarea:focus {
+    border-color: #ae8b59;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(174, 139, 89, 0.15);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) :is(
+    button,
+    a,
+    input,
+    select,
+    textarea,
+    [tabindex]
+):focus-visible {
+    outline: 3px solid #b28b54;
+    outline-offset: 3px;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-table th {
+    background: #f4f1e9;
+    color: #405144;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-table th,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-table td {
+    border-bottom-color: #ece9e1;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-table td {
+    color: #425147;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-table tbody tr:hover {
+    background: #fcfbf8;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-actions button,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-actions a {
+    background: #f8f6f1;
+    border-color: #e6e1d6;
+    color: #34483b;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-actions button:hover,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-actions a:hover {
+    background: #eee9df;
+}
+
+/* =====================================================
+   MODALS AND MESSAGES
+   ===================================================== */
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-modal {
+    background: #ffffff;
+    border-color: #e6e1d6;
+    color: #2d3c32;
+    box-shadow: 0 20px 70px rgba(20, 32, 24, 0.18);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-modal::backdrop {
+    background: rgba(15, 25, 19, 0.65);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-error,
+.reception-dash .reception-dash__error {
+    background: #fff2f1;
+    border-color: #ebcccc;
+    color: #8c3030;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-success {
+    background: #eff8f0;
+    border-color: #cee2d1;
+    color: #285a38;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+    .reception-dash .reception-dash__cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .rx-shell:not(.manager-shell):not(.hk-shell) .rx-sidebar {
+        border-right: 0;
+        border-bottom: 1px solid #405044;
+    }
+
+    .rx-shell:not(.manager-shell):not(.hk-shell) .rx-mobile-toggle {
+        background: transparent;
+        border-color: rgba(223, 204, 173, 0.45);
+        color: #ffffff;
+    }
+
+    .rx-shell:not(.manager-shell):not(.hk-shell) .rx-mobile-toggle:hover {
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .rx-shell:not(.manager-shell):not(.hk-shell) .rx-main {
+        padding: 20px 14px;
+    }
+
+    .rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero {
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 560px) {
+    .reception-dash .reception-dash__cards {
+        grid-template-columns: 1fr;
+    }
+
+    .reception-dash .reception-dash__header {
+        align-items: stretch;
+    }
+
+    .reception-dash .reception-dash__header button {
+        width: 100%;
+    }
+}
+
+/* =====================================================
+   PRINT — keep invoices clear on white paper
+   ===================================================== */
+
+@media print {
+    .rx-shell:not(.manager-shell):not(.hk-shell),
+    .rx-shell:not(.manager-shell):not(.hk-shell) .rx-main {
+        background: #ffffff !important;
+        color: #000000;
+    }
+
+    .rx-shell:not(.manager-shell):not(.hk-shell) .rx-invoice,
+    .rx-shell:not(.manager-shell):not(.hk-shell) .rx-panel {
+        box-shadow: none;
+    }
+
+    .rx-shell:not(.manager-shell):not(.hk-shell) .rx-table th {
+        background: #f2f2f2;
+        color: #000000;
+    }
+
+    .rx-shell:not(.manager-shell):not(.hk-shell) .rx-table td {
+        color: #000000;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rx-shell:not(.manager-shell):not(.hk-shell) .rx-nav a,
+    .rx-shell:not(.manager-shell):not(.hk-shell) .rx-button {
+        transition: none;
+    }
+
+    .rx-shell:not(.manager-shell):not(.hk-shell) .rx-button:hover:not(:disabled) {
+        transform: none;
+    }
+}
+/* =====================================================
+   RECEPTIONIST = ADMIN / MANAGER LOOK (teal theme)
+   (yeh block receptionist.css ke bilkul end mein rahe)
+   ===================================================== */
+
+.rx-shell:not(.manager-shell):not(.hk-shell) {
+    --rc-primary: #326863;
+    --rc-dark: #1f4d49;
+    --rc-deep: #17403c;
+    --rc-accent: #d2b58a;
+    --rc-bg: #f4f7f6;
+    --rc-border: #e3ebe9;
+    --rc-soft: #eaf1ef;
+    --rc-text: #2a3f3c;
+    --rc-muted: #6b807c;
+
+    background: var(--rc-bg);
+    color: var(--rc-text);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) h1,
+.rx-shell:not(.manager-shell):not(.hk-shell) h2,
+.rx-shell:not(.manager-shell):not(.hk-shell) h3 {
+    color: var(--rc-dark);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) a {
+    color: var(--rc-primary);
+}
+
+/* ---------- Sidebar ---------- */
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-sidebar {
+    background: linear-gradient(180deg, var(--rc-deep), var(--rc-primary));
+    border-right: 0;
+    color: #ffffff;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-brand,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-brand strong {
+    color: #ffffff;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-brand small {
+    color: var(--rc-accent);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-monogram {
+    background: var(--rc-accent);
+    color: var(--rc-deep);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-nav a {
+    color: #ffffff;
+    background: transparent;
+    border: 0;
+    border-radius: 12px;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-nav a:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+}
+
+/* Active item: white box, teal text */
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-nav a.active,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-nav a.active:hover {
+    background: #ffffff;
+    border: 0;
+    box-shadow: none;
+    color: var(--rc-primary);
+    font-weight: 700;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-user {
+    border-top-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-user strong,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-user h2,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-user h3 {
+    color: #ffffff;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-user small,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-user p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-user a {
+    color: var(--rc-accent);
+}
+
+/* ---------- Main + Hero ---------- */
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-main {
+    background: var(--rc-bg);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero {
+    background: linear-gradient(120deg, var(--rc-deep), var(--rc-primary));
+    border: 0;
+    border-left: 6px solid var(--rc-accent);
+    border-radius: 22px;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero h1,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero h2,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero h3 {
+    color: #ffffff;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-eyebrow {
+    color: var(--rc-primary);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero .rx-eyebrow {
+    color: var(--rc-accent);
+}
+
+/* ---------- Buttons ---------- */
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-button,
+.rx-shell:not(.manager-shell):not(.hk-shell) a.rx-button,
+.rx-shell:not(.manager-shell):not(.hk-shell) .card button,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-actions button,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-actions a {
+    background: var(--rc-primary);
+    border: 1px solid var(--rc-primary);
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-button:hover:not(:disabled),
+.rx-shell:not(.manager-shell):not(.hk-shell) a.rx-button:hover,
+.rx-shell:not(.manager-shell):not(.hk-shell) .card button:hover:not(:disabled),
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-actions button:hover:not(:disabled),
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-actions a:hover {
+    background: var(--rc-dark);
+    border-color: var(--rc-dark);
+    color: #ffffff;
+}
+
+/* Secondary = white outline */
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-button.rx-secondary,
+.rx-shell:not(.manager-shell):not(.hk-shell) a.rx-button.rx-secondary {
+    background: #ffffff;
+    border: 1px solid var(--rc-border);
+    color: var(--rc-primary);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-button.rx-secondary:hover:not(:disabled),
+.rx-shell:not(.manager-shell):not(.hk-shell) a.rx-button.rx-secondary:hover {
+    background: var(--rc-soft);
+    border-color: var(--rc-primary);
+    color: var(--rc-dark);
+}
+
+/* Hero ke andar buttons (Refresh): white */
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero .rx-button,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero .rx-button:not(.rx-secondary) {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    color: var(--rc-primary);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero .rx-button:hover:not(:disabled),
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-hero .rx-button:not(.rx-secondary):hover {
+    background: var(--rc-soft);
+    border-color: var(--rc-soft);
+    color: var(--rc-dark);
+}
+
+/* ---------- Cards, stats, panels ---------- */
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-stat,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-panel,
+.rx-shell:not(.manager-shell):not(.hk-shell) .card {
+    background: #ffffff;
+    border: 1px solid var(--rc-border);
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(50, 104, 99, 0.06);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-stat::before {
+    background: var(--rc-accent);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-stat span,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-muted {
+    color: var(--rc-muted);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-stat strong {
+    color: var(--rc-primary);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-shortcuts a {
+    background: var(--rc-soft);
+    color: var(--rc-dark);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-shortcuts a:hover {
+    background: #d9e7e4;
+    color: var(--rc-dark);
+}
+
+/* ---------- Forms ---------- */
+.rx-shell:not(.manager-shell):not(.hk-shell) input,
+.rx-shell:not(.manager-shell):not(.hk-shell) select,
+.rx-shell:not(.manager-shell):not(.hk-shell) textarea {
+    background: #ffffff;
+    border: 1px solid var(--rc-border);
+    border-radius: 10px;
+    color: var(--rc-text);
+    font-weight: 400;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) input:focus,
+.rx-shell:not(.manager-shell):not(.hk-shell) select:focus,
+.rx-shell:not(.manager-shell):not(.hk-shell) textarea:focus {
+    border-color: var(--rc-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(50, 104, 99, 0.18);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-toolbar label,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-field {
+    color: var(--rc-dark);
+    font-weight: 600;
+}
+
+/* ---------- Tables ---------- */
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-table th {
+    background: var(--rc-soft);
+    color: var(--rc-dark);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-table th,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-table td {
+    border-bottom-color: var(--rc-border);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-table td {
+    color: var(--rc-text);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-table tbody tr:hover {
+    background: #f7faf9;
+}
+
+/* ---------- Modal ---------- */
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-modal {
+    background: #ffffff;
+    color: var(--rc-text);
+    border: 1px solid var(--rc-border);
+    border-radius: 20px;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-modal::backdrop {
+    background: rgba(15, 40, 37, 0.6);
+}
+
+/* ---------- Focus + Mobile ---------- */
+.rx-shell:not(.manager-shell):not(.hk-shell) :is(button, a, input, select, textarea, [tabindex]):focus-visible {
+    outline: 3px solid var(--rc-accent);
+    outline-offset: 2px;
+}
+
+@media (max-width: 760px) {
+    .rx-shell:not(.manager-shell):not(.hk-shell) .rx-sidebar {
+        border-bottom: 3px solid var(--rc-accent);
+    }
+
+    .rx-shell:not(.manager-shell):not(.hk-shell) .rx-mobile-toggle {
+        background: transparent;
+        border-color: rgba(255, 255, 255, 0.6);
+        color: #ffffff;
+    }
+}
+/* =====================================================
+   INVOICE PRINT FIX (receptionist + manager)
+   (yeh block file ke bilkul end mein rahe)
+   ===================================================== */
+
+@media print {
+    .rx-shell .rx-sidebar,
+    .rx-shell .rx-mobile-toggle,
+    .rx-shell .rx-skip,
+    .rx-shell .rx-hero,
+    .rx-shell .rx-toolbar,
+    .rx-shell .rx-noprint,
+    .rx-shell .no-print {
+        display: none !important;
+    }
+
+    html,
+    body,
+    #root,
+    .rx-shell {
+        display: block !important;
+        position: static !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        background: #ffffff !important;
+    }
+
+    .rx-shell .rx-main {
+        display: block !important;
+        position: static !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+    }
+
+    .rx-shell .rx-main * {
+        visibility: visible !important;
+    }
+
+    .rx-shell .rx-invoice,
+    .rx-shell .rx-panel,
+    .rx-shell .card {
+        position: static !important;
+        box-shadow: none !important;
+        border: 0 !important;
+        break-inside: avoid;
+    }
+}
+/* =====================================================
+   RECEPTIONIST — MY PROFILE PAGE (admin jaisa look)
+   (yeh block receptionist.css ke bilkul end mein rahe)
+   ===================================================== */
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page {
+    display: grid;
+    gap: 24px;
+    max-width: 1100px;
+    min-width: 0;
+}
+
+/* ---------- Hero / page header (teal box) ---------- */
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page > header,
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page > div:first-child,
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page > .gs-page-head,
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page > .gs-hero {
+    padding: 30px;
+    background: linear-gradient(120deg, var(--rc-deep), var(--rc-primary));
+    border: 0;
+    border-left: 6px solid var(--rc-accent);
+    border-radius: 22px;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page > header h1,
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page > div:first-child h1,
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page > .gs-page-head h1,
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page > .gs-hero h1 {
+    margin: 10px 0;
+    color: #ffffff;
+    font: clamp(29px, 3.2vw, 40px) / 1.18 Georgia, serif;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page > header p,
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page > div:first-child p,
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page > .gs-page-head p,
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page > .gs-hero p {
+    margin: 6px 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 14px;
+}
+
+/* eyebrow: "LUXURYSTAY · RECEPTIONIST WORKSPACE" */
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page > header p:first-child,
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page > div:first-child p:first-child,
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page .gs-eyebrow {
+    margin: 0;
+    color: var(--rc-accent);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+/* ---------- Cards (Personal details / Change password) ---------- */
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-card,
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page form {
+    min-width: 0;
+    margin: 0;
+    padding: 26px;
+    background: #ffffff;
+    border: 1px solid var(--rc-border);
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(50, 104, 99, 0.06);
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-card h2 {
+    margin: 0 0 6px;
+    color: var(--rc-dark);
+    font: 700 20px / 1.25 Arial, sans-serif;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-card h2 + p {
+    margin: 0 0 20px;
+    color: var(--rc-muted);
+    font-size: 13px;
+}
+
+/* ---------- Form fields ---------- */
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-form label {
+    display: grid;
+    gap: 7px;
+    margin: 16px 0 0;
+    color: var(--rc-dark);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-form input,
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-form select,
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-form textarea {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 14px;
+    background: #ffffff;
+    border: 1px solid var(--rc-border);
+    border-radius: 10px;
+    color: var(--rc-text);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-form input:disabled,
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-form input[readonly] {
+    background: var(--rc-soft);
+    color: var(--rc-muted);
+}
+
+/* ---------- Form buttons (Save profile / Change password) ---------- */
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-form button,
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-form button[type="submit"] {
+    min-height: 44px;
+    margin-top: 22px;
+    padding: 11px 20px;
+    background: var(--rc-primary);
+    border: 1px solid var(--rc-primary);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .gs-form button:hover:not(:disabled) {
+    background: var(--rc-dark);
+    border-color: var(--rc-dark);
+    color: #ffffff;
+}
+
+/* ---------- Sidebar: sign out + user block ---------- */
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-user .rx-button {
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-user .rx-button:hover:not(:disabled) {
+    background: #ffffff;
+    color: var(--rc-primary);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 760px) {
+    .rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page > header,
+    .rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page > div:first-child {
+        padding: 22px 18px;
+    }
+
+    .rx-shell:not(.manager-shell):not(.hk-shell) .gs-card,
+    .rx-shell:not(.manager-shell):not(.hk-shell) .gs-profile-page form {
+        padding: 18px 14px;
+    }
+}
+/* ===== RECEPTIONIST FIX: Sidebar nav links ek jaisa (Reservations fix) ===== */
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-sidebar .rx-nav a,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-sidebar .rx-nav a:hover,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-sidebar .rx-nav a:focus,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-sidebar .rx-nav a:active {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    gap: 12px !important;
+
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 12px 10px !important;
+
+    border: 0 !important;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+    transform: none !important;
+    text-indent: 0 !important;
+    left: 0 !important;
+    position: relative !important;
+
+    font-size: 12px !important;
+    font-weight: 600 !important;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-sidebar .rx-nav a:not(.active) {
+    background: transparent !important;
+    color: #ffffff !important;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-sidebar .rx-nav a:not(.active):hover {
+    background: rgba(255, 255, 255, 0.14) !important;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-sidebar .rx-nav a.active,
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-sidebar .rx-nav a.active:hover {
+    background: #ffffff !important;
+    color: #326863 !important;
+    font-weight: 700 !important;
+}
+
+.rx-shell:not(.manager-shell):not(.hk-shell) .rx-sidebar .rx-nav a > span {
+    margin: 0 !important;
+    transform: none !important;
+    color: inherit !important;
+}

@@ -1,0 +1,31 @@
+{
+  "name": "luxurystay-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "seed:admin": "node src/seeds/userSeed.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cloudinary": "^2.11.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.0.0",
+    "multer": "^2.4.0",
+    "nodemailer": "^10.1.1",
+    "sharp": "^0.35.5",
+    "socket.io": "^4.8.4",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "supertest": "^7.3.1"
+  }
+}

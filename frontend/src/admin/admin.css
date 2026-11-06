@@ -1,0 +1,1240 @@
+
+/* =========================================
+   LUXURYSTAY ADMIN
+   COMPLETE RESPONSIVE THEME
+========================================= */
+
+.lsa-shell {
+    --lsa-primary: #326863;
+    --lsa-dark: #244e4a;
+    --lsa-muted: #647875;
+    --lsa-border: #d9e6e2;
+    --lsa-bg: #f5f8f7;
+    --lsa-white: #ffffff;
+    --lsa-accent: #c5a574;
+    --lsa-soft: #eaf3f1;
+    --lsa-text: #293e3c;
+    --lsa-danger: #b94a48;
+    --lsa-success: #32765a;
+
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: var(--lsa-bg);
+    color: var(--lsa-text);
+    overflow-x: clip;
+    isolation: isolate;
+}
+
+.lsa-shell,
+.lsa-shell *,
+.lsa-shell *::before,
+.lsa-shell *::after {
+    box-sizing: border-box;
+}
+
+.lsa-shell img {
+    max-width: 100%;
+}
+
+.lsa-shell button,
+.lsa-shell input,
+.lsa-shell select,
+.lsa-shell textarea {
+    font-family: inherit;
+}
+
+.lsa-shell button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.lsa-shell .lsa-sidebar {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 28px 18px;
+
+    background: linear-gradient(
+        180deg,
+        #244e4a 0%,
+        #326863 100%
+    );
+
+    border-right: 1px solid #244e4a;
+    color: #ffffff;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,.35) transparent;
+}
+
+.lsa-shell .lsa-brand {
+    display: block;
+    color: #ffffff !important;
+    font-family: Georgia, serif;
+    font-size: 27px;
+    line-height: 1.3;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.lsa-shell .lsa-brand span {
+    display: block;
+    margin-top: 7px;
+    color: #e1c99e !important;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.lsa-shell .lsa-sidebar > p {
+    margin: 24px 0;
+    color: #ffffff !important;
+}
+
+.lsa-shell .lsa-sidebar small {
+    display: block;
+    color: #dceae6 !important;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   SIDEBAR NAVIGATION
+========================================= */
+
+.lsa-shell .lsa-sidebar nav {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 7px;
+    margin: 23px 0;
+}
+
+.lsa-shell .lsa-sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 45px;
+    padding: 11px 13px;
+
+    color: #ffffff !important;
+    background: transparent !important;
+    border: 1px solid transparent;
+    border-radius: 9px;
+
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease;
+}
+
+.lsa-shell .lsa-sidebar nav a span {
+    color: inherit !important;
+}
+
+.lsa-shell .lsa-sidebar nav a:hover {
+    background: rgba(255,255,255,.13) !important;
+    border-color: rgba(255,255,255,.2);
+    color: #ffffff !important;
+}
+
+.lsa-shell .lsa-sidebar nav a.active,
+.lsa-shell .lsa-sidebar nav a.active:hover {
+    background: #ffffff !important;
+    border-color: #ffffff !important;
+    color: #244e4a !important;
+    font-weight: 700;
+}
+
+.lsa-shell .lsa-sidebar nav a.active span {
+    color: #244e4a !important;
+}
+
+.lsa-shell .lsa-sidebar button {
+    color: #ffffff !important;
+    background: rgba(255,255,255,.08) !important;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 8px;
+}
+
+/* =========================================
+   MOBILE HEADER
+========================================= */
+
+.lsa-shell .lsa-mobile {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    width: 100%;
+    padding: 15px 20px;
+
+    background: #244e4a !important;
+    color: #ffffff !important;
+    border-bottom: 3px solid var(--lsa-accent);
+}
+
+.lsa-shell .lsa-mobile a,
+.lsa-shell .lsa-mobile strong {
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+.lsa-shell .lsa-mobile button {
+    padding: 9px 14px;
+    color: #ffffff !important;
+    background: transparent !important;
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 8px;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.lsa-shell .lsa-main {
+    width: 100%;
+    min-width: 0;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 32px;
+    background: var(--lsa-bg);
+}
+
+/* =========================================
+   PAGE HEADING
+========================================= */
+
+.lsa-shell .lsa-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    width: 100%;
+    min-width: 0;
+    margin: 0 0 25px;
+    padding: 26px 28px;
+
+    background: linear-gradient(
+        120deg,
+        #244e4a,
+        #326863
+    );
+
+    border-left: 5px solid var(--lsa-accent);
+    border-radius: 14px;
+}
+
+.lsa-shell .lsa-heading > div {
+    min-width: 0;
+}
+
+.lsa-shell .lsa-heading h1 {
+    margin: 7px 0;
+    color: #ffffff !important;
+    font-family: Georgia, serif;
+    font-size: clamp(25px, 3vw, 36px);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.lsa-shell .lsa-heading h2,
+.lsa-shell .lsa-heading h3 {
+    color: #ffffff !important;
+}
+
+.lsa-shell .lsa-heading p {
+    margin: 7px 0 0;
+    color: #e2efec !important;
+    line-height: 1.6;
+}
+
+.lsa-shell .lsa-heading .lsa-eyebrow {
+    color: #e5cda4 !important;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+.lsa-shell h1,
+.lsa-shell h2,
+.lsa-shell h3,
+.lsa-shell h4 {
+    color: var(--lsa-dark);
+}
+
+.lsa-shell h2 {
+    font-size: 23px;
+}
+
+.lsa-shell h3 {
+    font-size: 18px;
+}
+
+.lsa-shell p {
+    color: var(--lsa-muted);
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.lsa-shell a {
+    color: var(--lsa-primary);
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.lsa-shell .lsa-card {
+    width: 100%;
+    min-width: 0;
+    margin: 0 0 22px;
+    padding: 23px;
+
+    background: #ffffff;
+    border: 1px solid var(--lsa-border);
+    border-radius: 13px;
+
+    box-shadow: 0 4px 16px rgba(36,78,74,.045);
+}
+
+.lsa-shell .lsa-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+    width: 100%;
+}
+
+.lsa-shell .lsa-stats .lsa-card {
+    position: relative;
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.lsa-shell .lsa-stats .lsa-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 3px;
+    background: var(--lsa-accent);
+}
+
+.lsa-shell .lsa-stats strong {
+    display: block;
+    margin-top: 9px;
+    color: var(--lsa-dark);
+    font-size: clamp(19px, 2vw, 27px);
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   TOOLBAR / FILTERS
+========================================= */
+
+.lsa-shell .lsa-toolbar {
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 19px;
+    margin-bottom: 22px;
+}
+
+.lsa-shell .lsa-toolbar label {
+    flex: 1 1 180px;
+    min-width: 150px;
+    margin: 0;
+}
+
+.lsa-shell .lsa-toolbar button {
+    flex: 0 0 auto;
+    min-height: 42px;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.lsa-shell button,
+.lsa-shell .lsa-quick a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    min-height: 39px;
+    padding: 9px 15px;
+
+    color: #ffffff;
+    background: var(--lsa-primary);
+    border: 1px solid var(--lsa-primary);
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.35;
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.lsa-shell button:hover:not(:disabled),
+.lsa-shell .lsa-quick a:hover {
+    color: #ffffff;
+    background: var(--lsa-dark);
+    border-color: var(--lsa-dark);
+}
+
+.lsa-shell button:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+/* Keep buttons readable inside action groups */
+
+.lsa-shell .lsa-row-actions button {
+    min-height: 34px;
+    padding: 7px 11px;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+/* =========================================
+   FORMS
+========================================= */
+
+.lsa-shell label {
+    display: block;
+    min-width: 0;
+    margin-bottom: 15px;
+    color: var(--lsa-dark);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.lsa-shell :is(input, select, textarea) {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 42px;
+    margin-top: 7px;
+    padding: 10px 12px;
+
+    color: var(--lsa-text);
+    background: #ffffff;
+    border: 1px solid var(--lsa-border);
+    border-radius: 8px;
+
+    font-size: 13px;
+    line-height: 1.5;
+    box-shadow: none;
+}
+
+.lsa-shell :is(input, select, textarea):focus {
+    outline: none;
+    border-color: var(--lsa-primary);
+    box-shadow: 0 0 0 3px rgba(50,104,99,.12);
+}
+
+.lsa-shell textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.lsa-shell input[type="checkbox"],
+.lsa-shell input[type="radio"] {
+    display: inline-block;
+    width: auto;
+    min-height: auto;
+    margin-right: 7px;
+    accent-color: var(--lsa-primary);
+}
+
+.lsa-shell input[type="file"] {
+    padding: 8px;
+    background: var(--lsa-soft);
+}
+
+/* =========================================
+   FORM GRID
+========================================= */
+
+.lsa-shell .lsa-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px 18px;
+    width: 100%;
+}
+
+.lsa-shell .lsa-form-grid > * {
+    min-width: 0;
+}
+
+.lsa-shell .lsa-wide {
+    grid-column: 1 / -1;
+}
+
+.lsa-shell .lsa-form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 23px;
+    padding-top: 18px;
+    border-top: 1px solid var(--lsa-border);
+}
+
+/* =========================================
+   TABLES
+========================================= */
+
+.lsa-shell .lsa-table-scroll {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+}
+
+.lsa-shell table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 12px;
+}
+
+.lsa-shell th {
+    padding: 14px 13px;
+    color: var(--lsa-dark);
+    background: var(--lsa-soft);
+    font-size: 11px;
+    font-weight: 700;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.lsa-shell td {
+    padding: 13px;
+    color: var(--lsa-text);
+    background: #ffffff;
+    border-bottom: 1px solid var(--lsa-border);
+    line-height: 1.55;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+}
+
+.lsa-shell th:first-child {
+    border-radius: 8px 0 0 0;
+}
+
+.lsa-shell th:last-child {
+    border-radius: 0 8px 0 0;
+}
+
+.lsa-shell tbody tr:hover td {
+    background: #f7fbfa;
+}
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.lsa-shell .lsa-row-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    min-width: 160px;
+}
+
+.lsa-shell .lsa-row-actions button {
+    flex: 0 0 auto;
+}
+
+/* =========================================
+   TABS
+========================================= */
+
+.lsa-shell .lsa-tabs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 20px;
+}
+
+.lsa-shell .lsa-tabs button {
+    color: var(--lsa-dark);
+    background: #ffffff;
+    border-color: var(--lsa-border);
+}
+
+.lsa-shell .lsa-tabs button[aria-pressed="true"] {
+    color: #ffffff;
+    background: var(--lsa-dark);
+    border-color: var(--lsa-dark);
+}
+
+/* =========================================
+   BADGES
+========================================= */
+
+.lsa-shell .lsa-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+
+    color: var(--lsa-dark);
+    background: var(--lsa-soft);
+    border: 1px solid var(--lsa-border);
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* =========================================
+   PAGINATION
+========================================= */
+
+.lsa-shell .lsa-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.lsa-shell .lsa-pagination span {
+    margin-right: auto;
+    color: var(--lsa-muted);
+    font-size: 12px;
+}
+
+/* =========================================
+   DIALOG / POPUP
+========================================= */
+
+.lsa-shell .lsa-dialog {
+    width: min(680px, calc(100vw - 40px));
+    max-width: 100%;
+    max-height: 88vh;
+    max-height: 88dvh;
+    padding: 25px;
+
+    color: var(--lsa-text);
+    background: #ffffff;
+    border: 1px solid var(--lsa-border);
+    border-radius: 15px;
+
+    box-shadow: 0 20px 65px rgba(0,0,0,.2);
+    overflow-y: auto;
+}
+
+.lsa-shell .lsa-dialog::backdrop {
+    background: rgba(16,35,32,.55);
+}
+
+.lsa-shell .lsa-dialog-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 22px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--lsa-border);
+}
+
+.lsa-shell .lsa-dialog-heading h2 {
+    margin: 0;
+    color: var(--lsa-dark);
+    font-family: Georgia, serif;
+    font-size: 23px;
+}
+
+.lsa-shell .lsa-dialog-heading button {
+    flex: 0 0 auto;
+}
+
+/* =========================================
+   ALERTS / MESSAGES
+========================================= */
+
+.lsa-shell .lsa-success {
+    padding: 12px 15px;
+    color: #276448;
+    background: #eaf6ee;
+    border: 1px solid #cce8d5;
+    border-radius: 8px;
+}
+
+.lsa-shell .lsa-error {
+    padding: 12px 15px;
+    color: #a33c3c;
+    background: #fff0ef;
+    border: 1px solid #f0d0ce;
+    border-radius: 8px;
+}
+
+.lsa-shell .lsa-hint {
+    padding: 12px 15px;
+    margin: 0 0 18px;
+    color: var(--lsa-dark);
+    background: var(--lsa-soft);
+    border-left: 3px solid var(--lsa-accent);
+    border-radius: 7px;
+    font-size: 12px;
+}
+
+.lsa-shell .lsa-empty {
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.lsa-shell .lsa-empty h2 {
+    margin: 0 0 8px;
+    font-family: Georgia, serif;
+}
+
+.lsa-shell .lsa-empty p {
+    margin: 0;
+}
+
+/* =========================================
+   INVOICE
+========================================= */
+
+.lsa-shell .lsa-invoice {
+    width: 100%;
+    padding: 24px;
+    color: #222222;
+    background: #ffffff;
+}
+
+.lsa-shell .lsa-invoice h1,
+.lsa-shell .lsa-invoice h2,
+.lsa-shell .lsa-invoice h3,
+.lsa-shell .lsa-invoice p,
+.lsa-shell .lsa-invoice td,
+.lsa-shell .lsa-invoice th {
+    color: #222222;
+}
+
+.lsa-shell .lsa-invoice table {
+    min-width: 0;
+}
+
+.lsa-shell .lsa-invoice dl {
+    width: 300px;
+    max-width: 100%;
+    margin-left: auto;
+}
+
+.lsa-shell .lsa-invoice dl > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 8px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.lsa-shell .lsa-invoice dd {
+    margin: 0;
+    text-align: right;
+}
+
+/* =========================================
+   DESKTOP / LAPTOP
+========================================= */
+
+@media (min-width: 1600px) {
+    .lsa-shell {
+        grid-template-columns: 270px minmax(0, 1fr);
+    }
+
+    .lsa-shell .lsa-main {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .lsa-shell {
+        grid-template-columns: 220px minmax(0, 1fr);
+    }
+
+    .lsa-shell .lsa-main {
+        padding: 25px;
+    }
+
+    .lsa-shell .lsa-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) and (min-width: 761px) {
+    .lsa-shell {
+        grid-template-columns: 190px minmax(0, 1fr);
+    }
+
+    .lsa-shell .lsa-sidebar {
+        padding: 22px 11px;
+    }
+
+    .lsa-shell .lsa-main {
+        padding: 20px;
+    }
+
+    .lsa-shell .lsa-sidebar nav a {
+        gap: 8px;
+        padding: 10px 8px;
+        font-size: 11px;
+    }
+
+    .lsa-shell .lsa-heading {
+        padding: 22px;
+    }
+
+    .lsa-shell .lsa-card {
+        padding: 18px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 760px) {
+    .lsa-shell {
+        display: block;
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    .lsa-shell .lsa-mobile {
+        display: flex;
+    }
+
+    .lsa-shell .lsa-sidebar {
+        display: none;
+        position: relative;
+        top: auto;
+        width: 100%;
+        height: auto;
+        max-height: 70vh;
+        max-height: 70dvh;
+        padding: 20px 16px;
+        overflow-y: auto;
+        border-right: 0;
+        border-bottom: 3px solid var(--lsa-accent);
+    }
+
+    .lsa-shell .lsa-sidebar.lsa-open {
+        display: block !important;
+    }
+
+    .lsa-shell .lsa-sidebar nav {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .lsa-shell .lsa-sidebar nav a {
+        min-height: 43px;
+        font-size: 12px;
+    }
+
+    .lsa-shell .lsa-main {
+        width: 100%;
+        max-width: none;
+        padding: 22px 15px;
+    }
+
+    .lsa-shell .lsa-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 13px;
+        padding: 21px;
+        margin-bottom: 20px;
+    }
+
+    .lsa-shell .lsa-heading > button {
+        width: 100%;
+    }
+
+    .lsa-shell .lsa-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .lsa-shell .lsa-toolbar label {
+        flex: 1 1 auto;
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+    }
+
+    .lsa-shell .lsa-toolbar button {
+        width: 100%;
+    }
+
+    .lsa-shell .lsa-form-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .lsa-shell .lsa-wide {
+        grid-column: auto;
+    }
+
+    .lsa-shell .lsa-pagination {
+        justify-content: space-between;
+    }
+
+    .lsa-shell .lsa-pagination span {
+        flex-basis: 100%;
+        margin: 0 0 5px;
+    }
+
+    .lsa-shell .lsa-dialog {
+        width: calc(100vw - 24px);
+        max-height: 90vh;
+        max-height: 90dvh;
+        padding: 19px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+    .lsa-shell .lsa-main {
+        padding: 15px 11px;
+    }
+
+    .lsa-shell .lsa-mobile {
+        padding: 12px;
+    }
+
+    .lsa-shell .lsa-sidebar nav {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .lsa-shell .lsa-stats {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .lsa-shell .lsa-heading {
+        padding: 17px;
+    }
+
+    .lsa-shell .lsa-heading h1 {
+        font-size: 26px;
+    }
+
+    .lsa-shell .lsa-card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .lsa-shell .lsa-row-actions {
+        min-width: 140px;
+    }
+
+    .lsa-shell .lsa-row-actions button {
+        padding: 7px 9px;
+        font-size: 10px;
+    }
+
+    .lsa-shell .lsa-form-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .lsa-shell .lsa-form-footer button {
+        width: 100%;
+    }
+
+    .lsa-shell .lsa-pagination button {
+        flex: 1;
+    }
+
+    .lsa-shell .lsa-dialog {
+        padding: 15px;
+    }
+
+    .lsa-shell .lsa-dialog-heading h2 {
+        font-size: 19px;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.lsa-shell :is(a, button, input, select, textarea):focus-visible {
+    outline: 3px solid var(--lsa-accent);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lsa-shell *,
+    .lsa-shell *::before,
+    .lsa-shell *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =========================================
+   PRINT
+========================================= */
+
+@media print {
+    body * {
+        visibility: hidden !important;
+    }
+
+    #lsa-invoice-print,
+    #lsa-invoice-print * {
+        visibility: visible !important;
+    }
+
+    #lsa-invoice-print {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0;
+    }
+}
+/* ===== Admin: Quick actions buttons ke beech spacing ===== */
+
+.lsa-shell .lsa-quick {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.lsa-shell .lsa-quick a,
+.lsa-shell .lsa-quick button {
+    margin: 0;
+}
+
+@media (max-width: 760px) {
+    .lsa-shell .lsa-quick {
+        gap: 10px;
+    }
+
+    .lsa-shell .lsa-quick a,
+    .lsa-shell .lsa-quick button {
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+/* ===== Admin: My profile page (admin ke apne --lsa-* colors ke saath) ===== */
+
+.lsa-shell .gs-profile-page {
+    display: grid;
+    gap: 28px;
+    max-width: 760px;
+}
+
+.lsa-shell .gs-profile-page .gs-hero {
+    display: block;
+    padding: 26px 28px;
+    border: 0;
+    border-left: 5px solid var(--lsa-accent);
+    border-radius: 14px;
+    background: linear-gradient(120deg, #244e4a, #326863);
+}
+
+.lsa-shell .gs-profile-page .gs-hero h1 {
+    margin: 6px 0 10px;
+    color: #ffffff;
+    font-family: Georgia, serif;
+}
+
+.lsa-shell .gs-profile-page .gs-hero p {
+    margin: 0 0 6px;
+    color: #e2efec;
+}
+
+.lsa-shell .gs-profile-page .gs-eyebrow {
+    color: #e5cda4;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.lsa-shell .gs-profile-page form {
+    display: grid;
+    gap: 16px;
+    padding: 24px 26px;
+    background: #ffffff;
+    border: 1px solid var(--lsa-border);
+    border-radius: 13px;
+    box-shadow: 0 4px 16px rgba(36, 78, 74, 0.045);
+}
+
+.lsa-shell .gs-profile-page form h2 {
+    margin: 0;
+    font-size: 22px;
+    color: var(--lsa-dark);
+}
+
+.lsa-shell .gs-profile-page form h2 + p {
+    margin: 0 0 6px;
+    font-size: 13px;
+}
+
+.lsa-shell .gs-profile-page form label {
+    display: grid;
+    gap: 7px;
+    margin: 0;
+}
+
+.lsa-shell .gs-profile-page form button {
+    justify-self: start;
+    margin-top: 6px;
+    padding: 11px 22px;
+}
+
+@media (max-width: 760px) {
+    .lsa-shell .gs-profile-page {
+        max-width: 100%;
+        gap: 18px;
+    }
+
+    .lsa-shell .gs-profile-page .gs-hero {
+        padding: 20px 18px;
+    }
+
+    .lsa-shell .gs-profile-page form {
+        padding: 18px 16px;
+    }
+
+    .lsa-shell .gs-profile-page form button {
+        justify-self: stretch;
+    }
+}
+/* ADMIN: hero buttons white (broad selector) */
+header button,
+header a[class*="button"],
+header a[class*="btn"],
+[class*="hero"] button,
+[class*="hero"] a[class*="button"],
+[class*="hero"] a[class*="btn"],
+[class*="head"] > button,
+[class*="head"] > a[class*="btn"] {
+    background: #ffffff !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 10px !important;
+    color: #326863 !important;
+    font-weight: 700 !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+}
+
+header button:hover:not(:disabled),
+[class*="hero"] button:hover:not(:disabled),
+[class*="hero"] a[class*="button"]:hover,
+[class*="hero"] a[class*="btn"]:hover {
+    background: #eaf1ef !important;
+    border-color: #eaf1ef !important;
+    color: #1f4d49 !important;
+}
+/* ===== FIX: Sidebar nav links ek jaisa (Reservations misaligned fix) ===== */
+
+.lsa-shell .lsa-sidebar nav a,
+.lsa-shell .lsa-sidebar nav a[class*="btn"],
+.lsa-shell .lsa-sidebar nav a[class*="button"],
+.lsa-shell .lsa-sidebar nav a[class*="head"],
+.lsa-shell .lsa-sidebar nav a[class*="hero"] {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    gap: 11px !important;
+
+    width: 100% !important;
+    min-height: 45px !important;
+    padding: 11px 13px !important;
+    margin: 0 !important;
+
+    color: #ffffff !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    border-radius: 9px !important;
+
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+}
+
+.lsa-shell .lsa-sidebar nav a:hover {
+    background: rgba(255,255,255,.13) !important;
+    border-color: rgba(255,255,255,.2) !important;
+    color: #ffffff !important;
+}
+
+.lsa-shell .lsa-sidebar nav a.active,
+.lsa-shell .lsa-sidebar nav a.active:hover {
+    background: #ffffff !important;
+    border-color: #ffffff !important;
+    color: #244e4a !important;
+    font-weight: 700 !important;
+}
+
+.lsa-shell .lsa-sidebar nav a.active span {
+    color: #244e4a !important;
+}
